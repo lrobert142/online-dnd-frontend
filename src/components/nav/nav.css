@@ -1,0 +1,26 @@
+#main-nav {
+    display: block;
+    background: var(--background-darker);
+    margin-top: 0;
+    padding: var(--gap-s) var(--gap-l);
+
+    .nav-item {
+        display: inline-block;
+        margin-right: var(--gap-s);
+
+        a {
+            display: inline-block;
+            padding: var(--gap-m);
+            text-decoration: none;
+            color: var(--foreground);
+
+            &:hover {
+                color: var(--foreground-darker);
+            }
+        }
+    }
+
+    :last-child {
+        margin-right: 0;
+    }
+}

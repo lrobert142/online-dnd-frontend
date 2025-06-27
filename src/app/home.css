@@ -1,0 +1,31 @@
+#home {
+    padding: 1rem;
+
+    .heading {
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: var(--gap-m);
+    }
+
+    .hero-image-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: var(--gap-m);
+    }
+
+    .hero-image {
+        .image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: var(--gap-xs);
+        }
+
+        .description {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75em;
+        }
+    }
+}

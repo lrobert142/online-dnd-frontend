@@ -1,0 +1,133 @@
+#characters-list {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    padding: var(--gap-m);
+
+    .character-portrait {
+        position: relative;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 300px;
+        margin: 0 var(--gap-s) var(--gap-s) 0;
+        cursor: pointer;
+
+        .image {
+            display: block;
+            margin: 0 auto var(--gap-xs) auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .name {
+            position: absolute;
+            display: block;
+            width: 100%;
+            margin: 0;
+            bottom: 0;
+            text-align: center;
+            font-size: 0.75em;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            line-height: 2rem;
+            transition: line-height 0.2s ease-in-out;
+        }
+
+        &:hover {
+            .name {
+                background-color: rgba(0, 0, 0, 0.65);
+                line-height: 2.5rem;
+            }
+        }
+    }
+}
+
+#character-modal {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--gap-l);
+    overflow: hidden;
+
+    .close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 32px;
+        height: 32px;
+        opacity: 0.5;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:before, &:after {
+            position: absolute;
+            left: 15px;
+            content: ' ';
+            height: 33px;
+            width: 2px;
+            background-color: var(--foreground);
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .centre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .content {
+        max-width: 800px;
+        position: relative;
+        padding: var(--gap-l);
+        border: 1px solid var(--foreground);
+        border-radius: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.85);
+        max-height: 80vh;
+        overflow: scroll;
+    }
+
+    .image {
+        display: inline-block;
+        float: left;
+        margin: 0 var(--gap-l) var(--gap-m) 0;
+    }
+
+    .occupation-title, .location-title, .description-title {
+        margin: 0;
+    }
+
+    .gender-and-species, .occupation, .location, .description {
+        margin-top: var(--gap-xs);
+    }
+
+    .name {
+        margin: 0;
+    }
+
+    .gender-and-species {
+        margin-top: var(--gap-xs);
+        font-size: 0.85rem;
+    }
+
+    .gender, .species {
+        text-transform: capitalize;
+        font-style: italic;
+    }
+}

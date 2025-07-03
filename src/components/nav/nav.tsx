@@ -8,7 +8,7 @@ export default function Nav() {
                 <Link href={"/"}>Home</Link>
             </li>
             <li className="nav-item" key={"characters"}>
-                <Link href={"/characters"}>Characters</Link>
+                <Link href={"/character-list"}>Characters</Link>
             </li>
             <li className="nav-item" key={"locations"}>
                 <Link href={"/locations"}>Locations</Link>

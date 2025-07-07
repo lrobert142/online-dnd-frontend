@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e8a4ed-c360-4dc3-b874-3cc3d6040522" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/character-list/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/character.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/characters/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav/nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav/nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/character-list/components/character-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/character-list/components/character-list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/character-list/components/character-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/character-list/components/character-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/character.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     "go.import.settings.migrated": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/Users/lachlanrobertson/dev/online-dnd-frontend",
+    "last_opened_file_path": "/Users/lachlanrobertson/dev/online-dnd-frontend/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -53,9 +55,17 @@
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "/Users/lachlanrobertson/dev/online-dnd-frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "CSS"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/characters" />
     </key>
@@ -90,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751494629267</updated>
-      <workItem from="1751494630328" duration="15011000" />
+      <workItem from="1751494630328" duration="40795000" />
     </task>
     <servers />
   </component>

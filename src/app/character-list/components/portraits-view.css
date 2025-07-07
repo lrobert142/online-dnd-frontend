@@ -1,0 +1,44 @@
+#portraits-view {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    padding: var(--gap-m);
+
+    .character-portrait {
+        position: relative;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 300px;
+        margin: 0 var(--gap-s) var(--gap-s) 0;
+        cursor: pointer;
+
+        .image {
+            display: block;
+            margin: 0 auto var(--gap-xs) auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .name {
+            position: absolute;
+            display: block;
+            width: 100%;
+            margin: 0;
+            bottom: 0;
+            text-align: center;
+            font-size: 0.75em;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            line-height: 2rem;
+            transition: line-height 0.2s ease-in-out;
+        }
+
+        &:hover {
+            .name {
+                background-color: rgba(0, 0, 0, 0.65);
+                line-height: 2.5rem;
+            }
+        }
+    }
+}

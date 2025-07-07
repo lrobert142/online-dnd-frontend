@@ -1,15 +1,202 @@
 import {Character} from "@/types/character";
 
-export const NPCs: Character[] = [{
-    id: "1",
-    name: "Toblen Stonehill",
-    image: "/npc/toblen-stonehill.png",
-    species: "asian small-clawed otter",
-    gender: "male",
-    occupation: "Innkeeper/Bartender",
-    description: `The boisterous and energetic owner of the Stonehill Inn in Phandalin.
-        Always there with a caring ear, an uplifting joke, and a strong drink, he can be relied upon to raise your spirits in any circumstance. 
-        
-        Despite his overly flirtatious nature, he is a family man and cares deeply about his wife and daughter`,
-    location: "Phandalin",
-}];
+export const NPCs: Character[] = [
+    {
+        id: "21b92fa7-3450-4521-a975-74042149918a",
+        name: "Toblen Stonehill",
+        image: "/npc/toblen-stonehill.png",
+        species: "asian small-clawed otter",
+        gender: "male",
+        occupation: "Innkeeper/Bartender",
+        description: [
+            `The boisterous and energetic owner of the Stonehill Inn in Phandalin. Always there with a caring ear, 
+            an uplifting joke, and a strong drink, he can be relied upon to raise your spirits in any circumstance.
+            Despite his overly flirtatious nature, he is actually quite the gentleman and only means them as a bit of 
+            harmless fun.`,
+            `Incredibly thankful to the party for helping free the town from control of the Redbrands, he makes sure to
+            always keep a few rooms prepared for them.`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "cbfae122-5895-49c7-9c81-1ffae805c704",
+        name: "Lady Primrose",
+        image: "/npc/primrose.png",
+        species: "archfey",
+        gender: "female",
+        occupation: "Archfey Queen of Nature",
+        description: [
+            `A beautiful, intelligent, and incredibly brutal archfey, she commands dominion over nature in the feywilds. No
+            flowers bloom without her permission, no trees dare take root until she commands them to.`,
+            `Fascinated with the material plane, she is known to engage with mortals far more frequently than most archfey.
+            If you find yourself in her sights you would do well to run and hide, or be ready to entertain a fey, lest
+            she introduce you to her flowerbeds.`,
+        ],
+        location: "Feywilds; Palace of Flowers",
+    },
+    {
+        id: "71a01e4f-5ade-4905-b0f0-38be92272b19",
+        name: "Grista",
+        image: "/npc/grista.png",
+        species: "spotted hyena",
+        gender: "female",
+        occupation: "Bunkhouse Owner",
+        description: [
+            `Foul-mouthed, foul-tempered, and willing to look the other way for the right amount of coin, Grista owns
+            and runs the Sleeping Giant bunkhouse; a dingy place that only sees questionable clientele.`,
+            `She cares little for what happens in Phandalin, and even less for what happens in the outside world, unless
+            it can bring her coin.`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "3ba433c1-0364-4b2f-918a-51717cbbc45b",
+        name: "Linene Graywind",
+        image: "/npc/linene-graywind.png",
+        species: "gray wolf",
+        gender: "female",
+        occupation: "Proprietor of the Lionshield Coster",
+        description: [
+            `Overworked, overstressed, and underpaid. Linene nearly single-handedly runs the trading post in Phandalin, 
+            the only true connection the frontier town has with the outside world. She is often found balancing books, 
+            taking stock, and making deals with miners and adventures alike.`,
+            `Despite what some people may think, she has a strong sense of fairness and ensures her new workers are well
+            looked after and fairly payed.`,
+            `Her latest worker, Droop, has removed a lot of stress and she is openly quite proud of him.`
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "64be86e9-6b0c-49a1-b0bd-4a7bcc074552",
+        name: "Elmar Barthen",
+        image: "/npc/elmar-barthen.png",
+        species: "puma",
+        gender: "male",
+        occupation: "Owner of the Barthen's Provisions",
+        description: [
+            `An older gentleman who owns and runs the general store in Phandalin, he's quite a nervous individual and
+            typically very soft-spoken, preferring a quiet night in over the noise and bustle of the local tavern.`,
+            `Though he typically enjoys interactions with adventures - many have assisted him in recovering stolen goods
+            from thieves that robbed his stores in his younger years - recent events have left a little frazzled.`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "e9632692-fd14-40d6-b20a-5fb3b1b5fa3a",
+        name: "Glass Staff (Iarno Albrek)",
+        image: "/npc/iarno-albrek.png",
+        species: "vulture",
+        gender: "male",
+        occupation: "Lieutenant of the Redbrands",
+        description: [
+            `Corrupt, selfish, and cowardly are just a few words to describe this treacherous wizard. Once a member of
+            the Lord's Alliance, he abandoned them beliving they were 'too safe' and joined up with the Redbrands.`,
+            `Quickly becoming a leader of the sect in Phandalin, he used his natural charisma and cunning to extort funds
+            from the town while secretly working with the mysterious Black Spider.`,
+            `Beaten and captured by the party he underestimated, he is now on his way to a prison in Neverwinter.`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "4fead6f1-0cbc-47bd-9621-db054c572413",
+        name: "Qelline Alderleaf",
+        image: "/npc/qelline-alderleaf.png",
+        species: "field mouse",
+        gender: "male",
+        occupation: "Farmer",
+        description: [
+            `A hard-working farmer who spends his days working the fields with his son, Carp, and his nights trying to
+            teach him how to read and write so that "he can have a better life than I did."`,
+            `Though he may come off as short-tempered - though don't use the S-word around him - he is generally a quite
+            agreeable person. As long as you don't use the S-word around him (then all bets are off!)`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "c4f0a85d-fdb4-4646-8d78-4b4567cc38f8",
+        name: "Harbin Wester",
+        image: "/npc/harbin-wester.png",
+        species: "komodo dragon",
+        gender: "male",
+        occupation: "Mayor",
+        description: [
+            `"Being a mayor is stressful; managing every little thing and having everyone look up to you is a lot, you know?
+            It can turn even the best man into a grumpy irate shell of his former self. Which makes me wonder if Harbin 
+            was a mayor before he arrived here, because he's always been a grumpy #@*&^!" - Common joke amongst patrons
+            of Stonehill Inn after a few mugs of ale.`,
+            `A confrontational yet cowardly lizard who clashes openly with others regularly and insists that everything
+            he does was for "the good of the town", he is not well liked by residents of Phandalin.`,
+            `Despite the party having saved his wife, he is unlikely to give thanks and has not left his office since
+            their success in driving off the Redbrands.`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "925e8294-c2de-4c4a-8915-1a5b969189ec",
+        name: "Sildar Hallwinter",
+        image: "/npc/sildar-hallwinter.png",
+        species: "human",
+        gender: "male",
+        occupation: "Knight of the Lord's Alliance",
+        description: [
+            `Dependable, kindly, and helpful whenever and wherever and to whomever he can be, Sildar upholds his oath as
+            a knight of the Lord's Alliance with every action and interaction.`,
+            `Though a skilled swordsman in his own right, his natural charisma and expertise in planning and numerous
+            connections often result in him often staying behind to work out the 'less glamorous' parts of adventures,
+            from finding enemy strongholds to unraveling mysterious figures like the Black Spider.`,
+            `He has great respect for the party and despite having walked into some questionable interactions with them,
+            he considers them good friends and dependable allies.`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "312c506d-8da5-4522-8754-cb2549b7cc66",
+        name: "Sister Garaele",
+        image: "/npc/sister-garaele.png",
+        species: "timber wolf",
+        gender: "female",
+        occupation: "Priestess of Tymora",
+        description: [
+            `A kindly woman of the cloth who cares for the town with simple medicines and prayers, she can often be found
+            by her shrine lighting incense and silently praying for the protection and good fortune of Phandalin and all
+            who reside in it.`,
+            `Her mood has improved noticeably upon the dispersal of the Redbrands and her interactions with the party have
+            become much more light-hearted; even cracking a smile on occasion.`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "448d6485-6180-4d64-a3d9-8ec8f4b369d8",
+        name: "Droop",
+        image: "/npc/droop.png",
+        species: "goblin",
+        gender: "male",
+        occupation: "Emancipated slave",
+        description: [
+            `A goblin of no renown, from a family of no power, with little skills and even less smarts; it is little
+            wonder he was enslaved by bugbears. Their whipping boy, he spent much of his time begging for scraps of food
+            and trying to avoid frequent bullying and beatings.`,
+            `Freed from his slavery by the party, he feels he owes them deeply and has thrown himself wholeheartedly into
+            his job with Linene who - much to his relief and confusion - has treated him as an equal.`,
+            `"Maybe one day, I'll even learn what the boxes I carry around say!" - Droop, while staring at a box labeled 'Rice'.`,
+        ],
+        location: "Phandalin",
+    },
+    {
+        id: "201ec219-bdb9-47bb-85cf-fe5f7f18c9fd",
+        name: "Hazel",
+        image: "/npc/hazel.png",
+        species: "lion",
+        gender: "trans-female (MtF)",
+        occupation: "Blacksmith",
+        description: [
+            `"She's got talent for sure, I'd wager she'd even give a dwarven smith a run for his coin!" - Sildar, about Hazel's skill.`,
+            `Often absorbed entirely in smithing projects - from swords and armor, to nails and horseshoes - Hazel is the
+            town's sole blacksmith. She frequently works masterpieces from even the comparably low-quality metal imported
+            from out of town.`,
+            `Though her expressions are often difficult to read and her words often brief and blunt, the fact that she
+            stops her smithing entirely to talk with the party speaks loud about her thoughts about them.`,
+        ],
+        location: "Phandalin",
+    }
+];

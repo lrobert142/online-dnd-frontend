@@ -1,4 +1,4 @@
-import {SortAsc, SortDesc} from "@/util/sort";
+import {sortAsc, sortDesc} from "@/util/sort";
 
 export type Character = {
     id: string;
@@ -7,19 +7,13 @@ export type Character = {
     species: string;
     gender: string;
     occupation: string;
-    description: string;
+    description: string[];
     location: string;
 };
 
 export enum OrderBy {
     NameASC = "Name (A-Z)",
     NameDESC = "Name (Z-A)",
-    SpeciesASC = "Species (A-Z)",
-    SpeciesDESC = "Species (Z-A)",
-    OccupationASC = "Occupation (A-Z)",
-    OccupationDESC = "Occupation (Z-A)",
-    LocationASC = "Location (A-Z)",
-    LocationDESC = "Location (Z-A)",
 }
 
 export const GetCharacterById = function (characters: Character[], id: string | null): Character | undefined {
@@ -51,42 +45,12 @@ function orderCharacters(characters: Character[], orderBy?: OrderBy): Character[
     switch (orderBy) {
         case OrderBy.NameASC:
             sortFn = function (a: Character, b: Character): number {
-                return SortAsc(a.name, b.name)
+                return sortAsc(a.name, b.name)
             }
             break;
         case OrderBy.NameDESC:
             sortFn = function (a: Character, b: Character): number {
-                return SortDesc(a.name, b.name)
-            }
-            break;
-        case OrderBy.SpeciesASC:
-            sortFn = function (a: Character, b: Character): number {
-                return SortAsc(a.species, b.species)
-            }
-            break;
-        case OrderBy.SpeciesDESC:
-            sortFn = function (a: Character, b: Character): number {
-                return SortDesc(a.species, b.species)
-            }
-            break;
-        case OrderBy.OccupationASC:
-            sortFn = function (a: Character, b: Character): number {
-                return SortAsc(a.occupation, b.occupation)
-            }
-            break;
-        case OrderBy.OccupationDESC:
-            sortFn = function (a: Character, b: Character): number {
-                return SortDesc(a.occupation, b.occupation)
-            }
-            break;
-        case OrderBy.LocationASC:
-            sortFn = function (a: Character, b: Character): number {
-                return SortAsc(a.location, b.location)
-            }
-            break;
-        case OrderBy.LocationDESC:
-            sortFn = function (a: Character, b: Character): number {
-                return SortDesc(a.location, b.location)
+                return sortDesc(a.name, b.name)
             }
             break;
         default:

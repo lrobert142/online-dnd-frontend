@@ -1,4 +1,4 @@
-export const SortAsc = function (v1: string, v2: string) {
+export const sortAsc = function (v1: string, v2: string) {
     if (v1 < v2) {
         return -1;
     } else if (v1 > v2) {
@@ -8,11 +8,11 @@ export const SortAsc = function (v1: string, v2: string) {
     }
 }
 
-export const SortDesc = function (v1: string, v2: string) {
+export const sortDesc = function (v1: string, v2: string) {
     if (v1 < v2) {
-        return -1;
-    } else if (v1 > v2) {
         return 1;
+    } else if (v1 > v2) {
+        return -1;
     } else {
         return 0;
     }

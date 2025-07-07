@@ -1,0 +1,60 @@
+#character-filters {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--gap-l);
+
+    #searchbar {
+        display: block;
+        width: 100%;
+        padding: var(--gap-m);
+        border-radius: 1rem;
+    }
+
+    .order-by-container {
+        margin-top: var(--gap-xs);
+        margin-bottom: var(--gap-s);
+        text-align: right;
+    }
+
+    .order-by-select {
+        padding: var(--gap-xs);
+        border-radius: 0.25rem;
+        margin-right: var(--gap-xs);
+    }
+
+    .additional-filters {
+        display: block;
+        text-align: center;
+        font-size: 0.75rem;
+        cursor: pointer;
+        margin: var(--gap-xs) 0;
+    }
+
+    .filters {
+        margin-top: var(--gap-s);
+        overflow: hidden;
+        transition: max-height 0.15s ease-out;
+        max-height: 100px; /* Magic number: It happens to match the height we need right now. */
+
+        &.hidden {
+            max-height: 0;
+        }
+
+        .filter-container {
+            display: inline-block;
+            width: 30%;
+            margin-right: var(--gap-m);
+        }
+
+        .filter-label {
+            display: block;
+            font-size: 0.754rem;
+            margin-bottom: var(--gap-xs);
+        }
+
+        .filter-select {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+}

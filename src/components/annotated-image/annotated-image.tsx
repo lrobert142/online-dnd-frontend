@@ -10,7 +10,7 @@ type AnnotatedImageProps = {
 export default function AnnotatedImage(props: AnnotatedImageProps) {
     return (
         <div className={props.className}>
-            <Image className="image" {...props.imageProps} />
+            <Image className="image" {...props.imageProps} alt={props.description}/>
             <span className="description">{props.description}</span>
         </div>
     )

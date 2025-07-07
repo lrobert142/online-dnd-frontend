@@ -10,7 +10,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/gaelin.png",
+                        src: "/pc/gaelin.png",
                         alt: "PC - Gaelin",
                         width: 400,
                         height: 600,
@@ -20,7 +20,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/kaldoris.png",
+                        src: "/pc/kaldoris.png",
                         alt: "PC - Kaldoris",
                         width: 400,
                         height: 600,
@@ -30,7 +30,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/petee.png",
+                        src: "/pc/petee.png",
                         alt: "PC - Petee",
                         width: 400,
                         height: 600,
@@ -40,7 +40,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/sýnchysi.png",
+                        src: "/pc/sýnchysi.png",
                         alt: "PC - Sýnchysi",
                         width: 400,
                         height: 600,
@@ -48,7 +48,6 @@ export default function Home() {
                     description={"Sýnchysi"}
                 />
             </main>
-            <p className="afterword">An epic adventure in the making!</p>
         </div>
     );
 }

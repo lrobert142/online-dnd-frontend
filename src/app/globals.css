@@ -41,19 +41,3 @@ a {
         color: var(--foreground-darker);
     }
 }
-
-.deceased-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background-image: url('/skull.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.75);
-    opacity: 0.5;
-}

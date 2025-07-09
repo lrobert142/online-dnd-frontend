@@ -3,6 +3,7 @@ import "./portraits-view.css"
 import {Character} from "@/types/character";
 import {resizedImageUrl} from "@/util/image";
 import Image from "next/image";
+import DeceasedOverlay from "@/components/deceased-overlay/deceased-overlay";
 
 type characterDisplayProps = {
     characters: Character[];
@@ -20,7 +21,7 @@ export default function PortraitsView(props: characterDisplayProps) {
                         width="200"
                         height="300"
                     />
-                    {!character.isAlive && (<span className="deceased-overlay"></span>)}
+                    {!character.isAlive && (<DeceasedOverlay width={200} height={300}/>)}
                     <p className="name">{character.name}</p>
                 </div>
             ))}

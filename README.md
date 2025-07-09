@@ -23,7 +23,9 @@ Useful to checking how things render before they are deployed.
    browser.
 
 Note: Make sure to double-check links and images as BASE_PATH can act very strange if not defined and used correctly.
-- For this same reason, do not use `background-image` and instead prefer `Image` components.
+
+- For this same reason, do **NOT** use `background-image` as it will not work properly when deployed. Use `<Image/>` and
+  CSS magic instead.
 
 ## Regenerating images in correct sizes
 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import {Character} from "@/types/character";
 import {resizedImageUrl} from "@/util/image";
 import Link from "next/link";
+import DeceasedOverlay from "@/components/deceased-overlay/deceased-overlay";
 
 type characterDetailsModalProps = {
     closeModal: () => void;
@@ -31,7 +32,7 @@ export default function Modal(props: characterDetailsModalProps) {
                                src={resizedImageUrl(props.character.image, 200, 300)}
                                alt={props.character.name}
                                width="200" height="300"/>
-                        {!props.character.isAlive && (<span className="deceased-overlay"></span>)}
+                        {!props.character.isAlive && (<DeceasedOverlay width={200} height={300}/>)}
                     </Link>
                     <h1 className="name">{props.character.name}</h1>
                     <p className="gender-and-species">

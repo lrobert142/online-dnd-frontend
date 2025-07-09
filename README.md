@@ -17,7 +17,7 @@ Useful to checking how things render before they are deployed.
 
 1. Regenerate images via `./regenerate-images.sh `
     1. You can skip this if you have not changed any images since the last time they were regenerated
-2. Generate and output the static files via `PAGES_BASE_PATH="/online-dnd-frontend/out" pnpm run build`
+2. Generate and output the static files via `NEXT_PUBLIC_BASE_PATH="/online-dnd-frontend/out" pnpm run build`
     1. This makes sure URL and image paths are correctly referenced
 3. Open [http://localhost:63342/online-dnd-frontend/out/](http://localhost:63342/online-dnd-frontend/out/) with your
    browser.

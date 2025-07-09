@@ -12,8 +12,9 @@ mkdir npc/200x300
 mkdir pc/400x600
 
 # Create images in the right sizes (do not modify the original files)
-magick mogrify -path npc/200x300 -resize 200x300 npc/*
-magick mogrify -path pc/400x600 -resize 400x600 pc/*
+# We use `mogrify` directly instead of `magick mogrify` to ensure this is compatible with GitHub actions
+mogrify -path npc/200x300 -resize 200x300 npc/*
+mogrify -path pc/400x600 -resize 400x600 pc/*
 
 # Done!
 echo "Regenerated all images!"

@@ -36,6 +36,9 @@ the correct size. This way you are not loading a 10,000x10,000px image for a 50x
 ## TODO
 
 - Add a world map that has clickable areas to enable players to 'zoom in' to that area or see character details (open in new tab on character list? prefill search?)
+  - Will need to design a world map
+  - Then see where I put Phandalin and the area
+  - Then place all the NPCs in Phandalin and similar areas. Start simple and work from there.
 
 ### Maybe
 

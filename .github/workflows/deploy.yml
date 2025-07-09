@@ -58,6 +58,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
+      - name: Regenerate images
+        run: ./regenerate-images.sh
+
       - name: Build with Next.js
         run: pnpm run build
         env:

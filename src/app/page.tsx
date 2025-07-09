@@ -30,7 +30,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/pc/petee.png",
+                        src: "/pc/petee.jpg",
                         alt: "PC - Petee",
                         width: 400,
                         height: 600,

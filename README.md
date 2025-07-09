@@ -35,7 +35,11 @@ the correct size. This way you are not loading a 10,000x10,000px image for a 50x
 
 ## TODO
 
-- Make a card (detailed) view and a way to toggle between portrait and card views? (optional, might not be worth it?)
-- Look through my notes to find other NPCs the party has encountered that I haven't added yet. Also generate images for them!
-  - Carp Alderleaf: son of Qelline Alderleaf (image and entry)
-  - Marias Wester: Wife of Harbin Wester (image and entry)
+- Add a world map that has clickable areas to enable players to 'zoom in' to that area or see character details (open in new tab on character list? prefill search?)
+
+### Maybe
+
+- Make a card (detailed) view and a way to toggle between portrait and card views?
+- Update the description parsing in `npc.ts` to allow styling and references to other records. That way clicking on a link will bring up the other character details.
+- Should I make place for random equipment and items? Like the Whisper Crystal/Whisper Coin?
+- What about a tab for random creatures (like the fey creatures Sync makes up)?

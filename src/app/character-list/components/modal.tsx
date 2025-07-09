@@ -26,11 +26,12 @@ export default function Modal(props: characterDetailsModalProps) {
                 <div className="content">
                             <span className="close"
                                   onClick={props.closeModal}></span>
-                    <Link href={props.character.image} target="_blank" rel="noopener noreferrer">
+                    <Link className="portrait" href={props.character.image} target="_blank" rel="noopener noreferrer">
                         <Image className="image"
                                src={resizedImageUrl(props.character.image, 200, 300)}
                                alt={props.character.name}
                                width="200" height="300"/>
+                        {!props.character.isAlive && (<span className="deceased-overlay"></span>)}
                     </Link>
                     <h1 className="name">{props.character.name}</h1>
                     <p className="gender-and-species">

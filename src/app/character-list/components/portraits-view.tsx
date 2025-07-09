@@ -19,6 +19,7 @@ export default function PortraitsView(props: characterDisplayProps) {
                     style={{
                         backgroundImage: "url(" + resizedImageUrl(character.image, 200, 300) + ")",
                     }}>
+                    {!character.isAlive && (<div className="deceased-overlay"></div>)}
                     <p className="name">{character.name}</p>
                 </span>
             ))}

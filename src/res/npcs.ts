@@ -17,6 +17,7 @@ export const NPCs: Character[] = [
             always keep a few rooms prepared for them.`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "cbfae122-5895-49c7-9c81-1ffae805c704",
@@ -33,6 +34,7 @@ export const NPCs: Character[] = [
             she introduce you to her flowerbeds.`,
         ],
         location: "Feywilds; Palace of Flowers",
+        isAlive: true,
     },
     {
         id: "71a01e4f-5ade-4905-b0f0-38be92272b19",
@@ -48,6 +50,7 @@ export const NPCs: Character[] = [
             it can bring her coin.`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "3ba433c1-0364-4b2f-918a-51717cbbc45b",
@@ -65,6 +68,7 @@ export const NPCs: Character[] = [
             `Her latest worker, Droop, has removed a lot of stress and she is openly quite proud of him.`
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "64be86e9-6b0c-49a1-b0bd-4a7bcc074552",
@@ -80,10 +84,11 @@ export const NPCs: Character[] = [
             from thieves that robbed his stores in his younger years - recent events have left a little frazzled.`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "e9632692-fd14-40d6-b20a-5fb3b1b5fa3a",
-        name: "Glass Staff (Iarno Albrek)",
+        name: "Iarno Albrek (Glass Staff)",
         image: "/npc/iarno-albrek.png",
         species: "vulture",
         gender: "male",
@@ -96,6 +101,7 @@ export const NPCs: Character[] = [
             `Beaten and captured by the party he underestimated, he is now on his way to a prison in Neverwinter.`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "4fead6f1-0cbc-47bd-9621-db054c572413",
@@ -111,6 +117,7 @@ export const NPCs: Character[] = [
             agreeable person. As long as you don't use the S-word around him (then all bets are off!)`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "c4f0a85d-fdb4-4646-8d78-4b4567cc38f8",
@@ -125,11 +132,12 @@ export const NPCs: Character[] = [
             was a mayor before he arrived here, because he's always been a grumpy #@*&^!" - Common joke amongst patrons
             of Stonehill Inn after a few mugs of ale.`,
             `A confrontational yet cowardly lizard who clashes openly with others regularly and insists that everything
-            he does was for "the good of the town", he is not well liked by residents of Phandalin.`,
+            he does is for "the good of the town", he is not well liked by residents of Phandalin.`,
             `Despite the party having saved his wife, he is unlikely to give thanks and has not left his office since
             their success in driving off the Redbrands.`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "925e8294-c2de-4c4a-8915-1a5b969189ec",
@@ -148,6 +156,7 @@ export const NPCs: Character[] = [
             he considers them good friends and dependable allies.`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "312c506d-8da5-4522-8754-cb2549b7cc66",
@@ -164,6 +173,7 @@ export const NPCs: Character[] = [
             become much more light-hearted; even cracking a smile on occasion.`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "448d6485-6180-4d64-a3d9-8ec8f4b369d8",
@@ -181,6 +191,7 @@ export const NPCs: Character[] = [
             `"Maybe one day, I'll even learn what the boxes I carry around say!" - Droop, while staring at a box labeled 'Rice'.`,
         ],
         location: "Phandalin",
+        isAlive: true,
     },
     {
         id: "201ec219-bdb9-47bb-85cf-fe5f7f18c9fd",
@@ -198,5 +209,106 @@ export const NPCs: Character[] = [
             stops her smithing entirely to talk with the party speaks loud about her thoughts about them.`,
         ],
         location: "Phandalin",
-    }
+        isAlive: true,
+    },
+    {
+        id: "006ab6ba-71aa-43d3-8aaf-6b506645ea14",
+        name: "Yeemik",
+        image: "/npc/yeemik.png",
+        species: "goblin",
+        gender: "male",
+        occupation: "Shaman",
+        description: [
+            `A cruel, manipulative, power-hungry goblin who thinks only of himself. He believes his position as shaman
+            means he is owed leadership of the tribe, though he would never say this out loud less he draw the ire of Klarg.
+            Like the rest of the goblins, he lives in fear and hatred of the bugbear.`,
+            `Though he managed to capture the party at one point, his arrogance and hunger for power led to his downfall
+            and summary execution when they escaped. Now his manipulative words are no more.`
+        ],
+        location: "Cragmaw Hideout",
+        isAlive: false,
+    },
+    {
+        id: "9be5e005-3f68-4176-843f-a2aa84f10ede",
+        name: "Klarg",
+        image: "/npc/klarg.png",
+        species: "bugbear",
+        gender: "male",
+        occupation: "Tyrannical leader",
+        description: [
+            `Large, strong, and dumber than a box of rocks, Klarg leads the Goblins of Cragmaw Hideout through fear and
+            intimidation. His word is absolute and his axe is sharp enough to cut down any who would question his rule,
+            best to just stay out of his way.`,
+            `Betrayed by Yeemik and his once-abused wolf, Ripper, the party was able to instigate a rebellion that lead
+            to the tyrant being cut down where he stood. All that strength matters little now.`
+        ],
+        location: "Cragmaw Hideout",
+        isAlive: false,
+    },
+    {
+        id: "c1864ebd-ca93-4692-aeda-1505309c3040",
+        name: "Carp Alderleaf",
+        image: "/npc/carp-alderleaf.png",
+        species: "field mouse",
+        gender: "male",
+        occupation: "Farmer",
+        description: [
+            `Son of Qelline Alderleaf, he tends the fields alongside his father during the day and (begrudgingly) studies
+            at night. He hopes to one day leave Phandalin and travel to a big city where he can become a scholar, though
+            he is aware he has a long way to go to achieve his dream.`,
+            `Ever one to love exploring the town and it's surroundings, his adventures led to him discovering a secret
+            tunnel the party was able to use to infiltrate the Redbrands. He likes to think it was because of his discovery
+            that the party were able to drive them off at all.`,
+        ],
+        location: "Phandalin",
+        isAlive: true,
+    },
+    {
+        id: "3fd66e44-e917-4d2d-98b4-fd0967e011d7",
+        name: "Naomi Freewind",
+        image: "/npc/naomi-freewind.jpg",
+        species: "aarakocra",
+        gender: "female",
+        occupation: "Adventurer/Scout",
+        description: [
+            `A free-spirited, kind, and very talented member of the Adventurer's Guild, Naomi specialises in reconnaissance,
+            scouting, and data gathering providing invaluable information the Guild can use to ensure their operations are
+            successful and other adventures are not going into danger blind.`,
+            `Called in as a favour by Sildar, she is happy to help the party track down the mysterious Black Spider and
+            ensure that whatever evil they are planning is thwarted before it can start.`,
+            `She seems to know Petee and his father - Peet - though exact details are largely unknown at this time.`
+        ],
+        location: "Phandalin",
+        isAlive: true,
+    },
+    {
+        id: "83b87490-dd1d-494a-a6bf-413f77eaa04b",
+        name: "Black Spider",
+        image: "/npc/black-spider.png",
+        species: "unknown",
+        gender: "unknown",
+        occupation: "Unknown",
+        description: [
+            `The mysterious figure behind the Redbrand's presence in Phandalin, they seem to have a deep interest in the
+            Phandelver mine, though what for or why remains completely mystery. Who or what are they?`,
+        ],
+        location: "Unknown",
+        isAlive: true,
+    },
+    {
+        id: "6ff25e7c-9792-4e41-a2d6-70230d063787",
+        name: "Ignis Firebelly",
+        image: "/npc/ignis-firebelly.png",
+        species: "Lizardfolk",
+        gender: "Nonbinary",
+        occupation: "Alchemist",
+        description: [
+            `A strange lizard with a penchant for alchemy and strong desire to learn, they spend most of their time in a
+            walking tower devising new and interesting concoctions for their archfey lord, Nova.`,
+            `Little is known about what specifically they create or why, and even less is known about how they came into
+            the feywilds.`
+        ],
+        location: "Feywilds, Valley of Fire",
+        isAlive: true,
+    },
 ];

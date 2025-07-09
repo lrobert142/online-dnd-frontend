@@ -1,0 +1,18 @@
+#credits {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--gap-l);
+
+  .footnote {
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  a {
+    color: var(--foreground);
+
+    &:hover {
+      color: var(--foreground-darker);
+    }
+  }
+}

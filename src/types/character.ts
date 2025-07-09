@@ -9,6 +9,7 @@ export type Character = {
     occupation: string;
     description: string[];
     location: string;
+    isAlive: boolean;
 };
 
 export enum OrderBy {

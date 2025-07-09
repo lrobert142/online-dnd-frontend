@@ -13,12 +13,17 @@
         margin: 0 var(--gap-s) var(--gap-s) 0;
         cursor: pointer;
 
-        .image {
-            display: block;
-            margin: 0 auto var(--gap-xs) auto;
-            max-width: 100%;
-            height: auto;
-        }
+        /*.deceased-overlay {*/
+        /*    display: inline-block;*/
+        /*    width: 100%;*/
+        /*    height: 100%;*/
+        /*    background-image: url('/skull.png');*/
+        /*    background-size: contain;*/
+        /*    background-repeat: no-repeat;*/
+        /*    background-position: center;*/
+        /*    background-color: rgba(0, 0, 0, 0.75);*/
+        /*    opacity: 0.5;*/
+        /*}*/
 
         .name {
             position: absolute;

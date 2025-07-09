@@ -49,6 +49,9 @@ jobs:
 #      - name: Install ghostscript
 #        run: sudo apt install ghostscript
 
+      - name: Use ImageMagick
+        uses: mfinelli/setup-imagemagick@v6.0.1
+
       - name: Install dependencies
         run: pnpm install
 
@@ -68,7 +71,6 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Regenerate images
-        uses: mfinelli/setup-imagemagick@v6.0.1
         run: ./regenerate-images.sh
 
       - name: Build with Next.js

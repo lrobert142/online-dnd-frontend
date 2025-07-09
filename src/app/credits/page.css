@@ -7,12 +7,4 @@
     font-size: 0.75rem;
     font-style: italic;
   }
-
-  a {
-    color: var(--foreground);
-
-    &:hover {
-      color: var(--foreground-darker);
-    }
-  }
 }

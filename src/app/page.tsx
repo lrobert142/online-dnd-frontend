@@ -1,6 +1,7 @@
 import "./home.css";
 
 import AnnotatedImage from "@/components/annotated-image/annotated-image";
+import {resizedImageUrl} from "@/util/image";
 
 export default function Home() {
     return (
@@ -10,7 +11,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/pc/gaelin.png",
+                        src: resizedImageUrl("/pc/gaelin.png", 400, 600),
                         alt: "PC - Gaelin",
                         width: 400,
                         height: 600,
@@ -20,7 +21,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/pc/kaldoris.png",
+                        src: resizedImageUrl("/pc/kaldoris.png", 400, 600),
                         alt: "PC - Kaldoris",
                         width: 400,
                         height: 600,
@@ -30,7 +31,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/pc/petee.jpg",
+                        src: resizedImageUrl("/pc/petee.jpg", 400, 600),
                         alt: "PC - Petee",
                         width: 400,
                         height: 600,
@@ -40,7 +41,7 @@ export default function Home() {
                 <AnnotatedImage
                     className="hero-image"
                     imageProps={{
-                        src: "/pc/sýnchysi.png",
+                        src: resizedImageUrl("/pc/sýnchysi.png", 400, 600),
                         alt: "PC - Sýnchysi",
                         width: 400,
                         height: 600,

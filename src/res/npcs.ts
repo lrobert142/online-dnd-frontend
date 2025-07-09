@@ -289,8 +289,8 @@ export const NPCs: Character[] = [
         gender: "unknown",
         occupation: "Unknown",
         description: [
-            `The mysterious figure behind the Redbrand's presence in Phandalin, they seem to have a deep interest in the
-            Phandelver mine, though what for or why remains completely mystery. Who or what are they?`,
+            `The mysterious figure behind the Redbrand's presence in Phandalin.`,
+            `They seem to have a deep interest in the Phandelver mine, though what for or why remains completely mystery.`,
         ],
         location: "Unknown",
         isAlive: true,

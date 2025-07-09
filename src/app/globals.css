@@ -8,6 +8,9 @@
     --gap-s: 0.5rem;
     --gap-m: 1rem;
     --gap-l: 2rem;
+
+    --page-max-width-l: 1000px;
+    --page-max-width-m: 800px;
 }
 
 :root:has(.no-doc-scroll) {

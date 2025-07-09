@@ -48,7 +48,7 @@
     }
 
     .content {
-        max-width: 800px;
+        max-width: var(--page-max-width-m);
         position: relative;
         padding: var(--gap-l);
         border: 1px solid var(--foreground);

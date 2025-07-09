@@ -1,5 +1,3 @@
-import "./style.css"
-
 import type {Metadata} from "next";
 import CharacterList from "@/app/character-list/components/character-list";
 import {Suspense} from "react";

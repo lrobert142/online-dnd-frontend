@@ -27,6 +27,8 @@ export default function Filters(props: filtersProps) {
                 <span className="order-by-label">Order by:&nbsp;</span>
                 <select className="order-by-select" name="order-by"
                         defaultValue={props.defaultOrder ? props.defaultOrder : undefined}
+                    // @ts-expect-error: e.target.value will always be a valid value as it is generated from OrderBy
+                    // options above
                         onChange={(e) => props.onOrderChange(e.target.value)}>
                     {orderByOptions}
                 </select>

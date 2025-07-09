@@ -11,7 +11,7 @@ export default function Locations() {
     return (
         <div id="locations">
             <p>
-                This page is still under development. But in the future, you'll be able to see:
+                This page is still under development. But in the future, you will be able to see:
                 <ul>
                     <li>A world map</li>
                     <li>Maps of previously visited towns and locations</li>
@@ -19,7 +19,7 @@ export default function Locations() {
                 </ul>
             </p>
             <p>
-                But this can be very complicated and very taxing to do right, so you'll need to wait just a little bit
+                But this can be very complicated and very taxing to do right, so you will need to wait just a little bit
                 longer ;)
             </p>
         </div>

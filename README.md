@@ -46,8 +46,6 @@ the correct size. This way you are not loading a 10,000x10,000px image for a 50x
     - Will need to design a world map
     - Then see where I put Phandalin and the area
     - Then place all the NPCs in Phandalin and similar areas. Start simple and work from there.
-- Mobile views! Make the website responsive so it works on any screen size (within reason)
-  - This will require me to test on more devices than just my Macbook; Windows and Android especially!
 
 ### Possible long-term improvements
 

@@ -55,4 +55,27 @@
             width: 100%;
         }
     }
+
+    @media (max-width: 400px) {
+        #searchbar {
+            margin-bottom: var(--gap-s);
+        }
+
+        .order-by-container {
+            margin-top: 0;
+            margin-bottom: var(--gap-m);
+            text-align: center;
+        }
+
+        .order-by-label {
+            display: block;
+            margin-bottom: var(--gap-s);
+        }
+
+        .order-by-select {
+            display: block;
+            width: 100%;
+            padding: var(--gap-s);
+        }
+    }
 }

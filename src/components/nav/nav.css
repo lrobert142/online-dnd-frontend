@@ -23,4 +23,16 @@
     :last-child {
         margin-right: 0;
     }
+
+    @media (max-width: 400px) {
+        .nav-item {
+            display: block;
+            margin: 0;
+            text-align: center;
+
+            a {
+                display: block;
+            }
+        }
+    }
 }

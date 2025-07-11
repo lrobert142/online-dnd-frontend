@@ -33,4 +33,10 @@
             }
         }
     }
+
+    @media (max-width: 400px) {
+        .character-portrait {
+            margin-right: 0;
+        }
+    }
 }

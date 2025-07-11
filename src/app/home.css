@@ -2,6 +2,7 @@
     max-width: var(--page-max-width-xl);
     margin: 0 auto;
     padding: 1rem;
+    text-align: center;
 
     .heading {
         display: block;
@@ -28,6 +29,28 @@
             width: 100%;
             text-align: center;
             font-size: 0.75em;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .hero-image-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .heading {
+            font-size: 2rem;
+        }
+
+        .hero-image-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    @media (max-width: 400px) {
+        .heading {
+            font-size: 1.5rem;
         }
     }
 }

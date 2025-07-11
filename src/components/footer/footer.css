@@ -23,4 +23,18 @@
         border-right: none;
         margin-right: 0;
     }
+
+    @media (max-width: 600px) {
+        .footer-links {
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-link {
+            display: block;
+            border: 0;
+            margin: 0 0 var(--gap-s) 0;
+            padding: 0;
+        }
+    }
 }

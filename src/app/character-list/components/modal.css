@@ -85,4 +85,55 @@
         text-transform: capitalize;
         font-style: italic;
     }
+
+    @media (max-width: 600px) {
+        padding: var(--gap-s);
+
+        .content {
+            padding: var(--gap-m)
+        }
+
+        .portrait {
+            margin-right: var(--gap-m);
+        }
+    }
+
+    @media (max-width: 550px) {
+        .name {
+            font-size: 1.5rem;
+        }
+
+        .occupation-title, .location-title, .description-title {
+            font-size: 1.25rem;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .description-title {
+            clear: both;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 375px) {
+        padding: 0;
+
+        .close {
+            display: inline-block;
+        }
+
+        .content {
+            max-height: 100%;
+        }
+
+        .portrait {
+            margin: 0 0 var(--gap-m) calc(50% - 100px);
+        }
+
+        .name, .occupation-title, .location-title, .description-title, .gender-and-species, .occupation, .location {
+            margin-bottom: var(--gap-s);
+            clear: both;
+            text-align: center;
+        }
+    }
 }

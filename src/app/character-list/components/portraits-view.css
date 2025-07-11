@@ -1,7 +1,6 @@
 #portraits-view {
-    display: grid;
-    grid-template-columns: repeat(8, auto);
     padding: var(--gap-m);
+    text-align: center;
 
     .character-portrait {
         position: relative;
@@ -10,7 +9,7 @@
         background-repeat: no-repeat;
         background-position: center;
         height: 300px;
-        margin: 0 var(--gap-s) var(--gap-s) 0;
+        margin: 0 var(--gap-m) var(--gap-m) 0;
         cursor: pointer;
 
         .name {

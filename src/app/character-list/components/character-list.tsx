@@ -1,5 +1,7 @@
 'use client'
 
+import './character-list.css'
+
 import {useReducer} from "react";
 import {useQueryState} from 'nuqs'
 import {useDebouncedCallback} from 'use-debounce';
@@ -62,7 +64,7 @@ export default function CharacterList() {
     }, 500)
 
     return (
-        <div>
+        <div id="character-list">
             <Filters
                 searchTerm={search ? search : undefined}
                 defaultOrder={order}

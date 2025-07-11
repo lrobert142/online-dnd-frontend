@@ -9,7 +9,8 @@
     --gap-m: 1rem;
     --gap-l: 2rem;
 
-    --page-max-width-l: 1000px;
+    --page-max-width-xl: 1500px;
+    --page-max-width-l: 1200px;
     --page-max-width-m: 800px;
 }
 

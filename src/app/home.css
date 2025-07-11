@@ -1,4 +1,6 @@
 #home {
+    max-width: var(--page-max-width-xl);
+    margin: 0 auto;
     padding: 1rem;
 
     .heading {

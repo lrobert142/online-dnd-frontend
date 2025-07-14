@@ -171,6 +171,9 @@ export const NPCs: Character[] = [
             who reside in it.`,
             `Her mood has improved noticeably upon the dispersal of the Redbrands and her interactions with the party have
             become much more light-hearted; even cracking a smile on occasion.`,
+            `Upon learning the location of Bowgentle's spellbook from the party she revealed that she was a Harper and
+            extended an invitation to join their ranks. She is happy to wait as long as needed for their answer, but
+            stressed that her position must be kept a secret from others if she is to work effectively.`,
         ],
         location: "Phandalin",
         isAlive: true,
@@ -299,8 +302,8 @@ export const NPCs: Character[] = [
         id: "6ff25e7c-9792-4e41-a2d6-70230d063787",
         name: "Ignis Firebelly",
         image: "/npc/ignis-firebelly.png",
-        species: "Lizardfolk",
-        gender: "Nonbinary",
+        species: "lizardfolk",
+        gender: "nonbinary",
         occupation: "Alchemist",
         description: [
             `A strange lizard with a penchant for alchemy and strong desire to learn, they spend most of their time in a
@@ -310,5 +313,50 @@ export const NPCs: Character[] = [
         ],
         location: "Feywilds, Valley of Fire",
         isAlive: true,
+    },
+    {
+        id: "9b52d4da-f60b-435a-8a3f-5ce599778ca8",
+        name: "Agatha",
+        image: "/npc/agatha.png",
+        species: "deer",
+        gender: "female",
+        occupation: "Diviner/Banshee",
+        description: [
+            `"A powerful diviner in life, she foresaw the fall of Old Owl Well and her own death at the hands of raiders.
+            Yet death did not scare her, nor did it sway her from warning and helping others escape. Even in her final
+            moments - as the stones around her legs dragged her deeper into the well and water filled her lungs - she
+            remained calm and composed. For she knew that death was not the end, it was merely a new beginning."
+            - An excerpt from 'Legends of Phandalin: The Great Diviner'`,
+            `Even as a banshee, Agatha still has incredible divination skills and may be willing to help those who ask
+            for her assistance, provided they show proper reverence for one of her status and power. Gifts are always
+            appreciated as well; what self-respecting diviner doesn't appreciate a little flattery?`,
+            `The party was able to get on Agatha's good side and she not only divined information about Bowgentle’s
+            spellbook, but also helped them fend off the undead plaguing the fort.`
+        ],
+        location: "Old Owl Well",
+        isAlive: false,
+    },
+    {
+        id: "af056a5d-efc4-4fdf-a903-d20a33eb5395",
+        name: "Hamun Kost",
+        image: "/npc/hamun-kost.png",
+        species: "mongoose",
+        gender: "male",
+        occupation: "Necromancer",
+        description: [
+            `The latest entry from an oddly supple leather journal inscribed with the name 'Hamun Kost' in blood-red
+            writing, found on the wizard's body after the party slayed him and his zombies:`,
+            `"My beautiful pets, oh how their groans and decaying flesh move my heart. I can hear the appreciation in every
+            gurgled breath, the love in every piece that rots off them. I know my dears, I have done well sewing you
+            back together, every stitch filled with adoration, nay, filled with love!`,
+            `Tomorrow I will get answers from that banshee, no matter how she resists me! Death is my domain and she will
+            obey, no matter how much I have to hurt her! Oh no my pets, I would never hurt you, never never. I could
+            never hurt you, I do love you so.`,
+            `Perhaps when that dragonborn is finished I shall have to take her for..." [the remainder of the page is
+            blank, as though the writer was suddenly interrupted]`,
+            `He now joins his pets in the afterlife, may they show him the same 'mercy' in death that he showed them in life.`
+        ],
+        location: "Old Owl Well",
+        isAlive: false,
     },
 ];

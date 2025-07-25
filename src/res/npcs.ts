@@ -359,4 +359,41 @@ export const NPCs: Character[] = [
         location: "Old Owl Well",
         isAlive: false,
     },
+    {
+        id: "b6771b52-cbae-4ef1-908d-74ec4f39858a",
+        name: "Saren Goldblood",
+        image: "/npc/saren-goldblood.png",
+        species: "dragonborn",
+        gender: "Female",
+        occupation: "Lieutenant of Cult of Coin",
+        description: [
+            `The leader of the Cult of Coin that inhabits the coast near Phandalin, she embodies the darker side
+            of Waukeen, willing to do anything to make an extra coin. Though cunning and manipulative, she has been known
+            to treat those who can benefit her with kindness and look after them as though they were her own children.
+            Until they outlive their usefulness.`,
+            `"Why sell the produce, when you can make more coin selling the ones who harvest it?" - A quote from Saren, 
+            said in secret during the Cult of Coin's anniversary celebration (citation needed)`,
+        ],
+        location: "Thundertree",
+        isAlive: true,
+    },
+    {
+        id: "38d39fc2-7d69-45df-a2e0-bde222aead06",
+        name: "Reidoth",
+        image: "/npc/reidoth.png",
+        species: "badger",
+        gender: "Nonbinary",
+        occupation: "Druid",
+        description: [
+            `"Sorry if I come off as strange, I'm just not very good with people. Animals I plants I get, but people
+            are... difficult for me." - Reidoth, when asked about their asocial behaviour`,
+            `A wilding who prefers the company of animals and plants over the noise and hustle of the town, they often
+            spend long periods of time in the wilderness beyond Phandalin. They are soft-spoken and rarely say more than
+            is necessary, often giving the outward appearance of a uncaring individual.`,
+            `Recently they have been snooping on the cultists that have moved into the ruins of Thundertree and trying
+            to avoid angering the dragon that has made its home there.`,
+        ],
+        location: "Thundertree",
+        isAlive: true,
+    },
 ];

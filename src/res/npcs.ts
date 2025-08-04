@@ -367,12 +367,15 @@ export const NPCs: Character[] = [
         gender: "Female",
         occupation: "Lieutenant of Cult of Coin",
         description: [
+            `"Why sell the produce, when you can make more coin selling the ones who harvest it?" - A quote from Saren, 
+            said in secret during the Cult of Coin's anniversary celebration (citation needed)`,
             `The leader of the Cult of Coin that inhabits the coast near Phandalin, she embodies the darker side
             of Waukeen, willing to do anything to make an extra coin. Though cunning and manipulative, she has been known
             to treat those who can benefit her with kindness and look after them as though they were her own children.
             Until they outlive their usefulness.`,
-            `"Why sell the produce, when you can make more coin selling the ones who harvest it?" - A quote from Saren, 
-            said in secret during the Cult of Coin's anniversary celebration (citation needed)`,
+            `The party was able to cut her down in Thunrdertree, only for her to melt into slush and be revealed as a
+            double! An ominous warning with Saren's voice filled the silence of their victory, promising terrible
+            retribution. Just what was she planning?`,
         ],
         location: "Thundertree",
         isAlive: true,
@@ -395,5 +398,22 @@ export const NPCs: Character[] = [
         ],
         location: "Thundertree",
         isAlive: true,
+    },
+    {
+        id: "07c7558f-b1d3-4270-8a5d-115f61ae1052",
+        name: "Venomfang",
+        image: "/npc/venomfang.png",
+        species: "dragon",
+        gender: "Male",
+        occupation: "Capricious Hunter",
+        description: [
+            `A young dragon that has recently taken to making the ruins Thundertree its home. Ill-tempered, conniving,
+            and "clearly superior to a mortal in every aspect" (according to itself), getting on his bad side is not
+            recommended.`,
+            `Despite his nimble claws and poisoned promises, his hide was no match against steel and spell and now he
+            speaks his honeyed lies no longer.`,
+        ],
+        location: "Thundertree",
+        isAlive: false,
     },
 ];

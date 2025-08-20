@@ -1,0 +1,48 @@
+.locations-list-heading {
+    text-align: center;
+    border-bottom: 3px solid var(--foreground);
+    padding-bottom: var(--gap-xs);
+    margin-bottom: 0;
+}
+
+.location-list-item {
+    --minimap-gap: var(--gap-m);
+    --minimap-size: 100px;
+
+    display: inline-block;
+    width: 50%;
+    padding: var(--gap-s);
+    border-bottom: 1px solid var(--foreground);
+    cursor: pointer;
+
+    &:nth-of-type(2n) {
+        border-left: 1px solid var(--foreground);
+    }
+
+    &:hover * {
+        opacity: 0.75;
+    }
+
+    .minimap {
+        float: left;
+        width: var(--minimap-size);
+        height: var(--minimap-size);
+        display: inline-block;
+        margin-right: var(--minimap-gap);
+    }
+
+    .name {
+        display: inline-block;
+        margin: 0 0 var(--gap-s) 0;
+    }
+
+    .snippet {
+        display: inline-block;
+        margin: 0 0 var(--gap-xs) 0;
+        width: calc(100% - var(--minimap-size) - var(--minimap-gap));
+    }
+
+    .clear {
+        clear: both;
+    }
+}

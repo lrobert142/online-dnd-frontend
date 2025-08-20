@@ -7,7 +7,7 @@ import {useQueryState} from 'nuqs'
 import {useDebouncedCallback} from 'use-debounce';
 
 import {NPCs} from "@/res/npcs";
-import {Character, FilterCharacters, GetCharacterById, OrderBy} from "@/types/character";
+import {Character, FilterCharacters, GetCharacterById, OrderByOptions} from "@/types/character";
 import Modal from "@/app/character-list/components/modal";
 import Filters from "@/app/character-list/components/filters";
 import PortraitsView from "@/app/character-list/components/portraits-view";
@@ -24,7 +24,7 @@ enum filterAction {
 type charactersAction = {
     Action: filterAction;
     Search?: string;
-    OrderBy?: OrderBy;
+    OrderBy?: string;
 }
 
 function charactersReducer(prevChars: Character[], action: charactersAction): Character[] {
@@ -39,10 +39,10 @@ function charactersReducer(prevChars: Character[], action: charactersAction): Ch
 
 export default function CharacterList() {
     const [id, setIdInUrl] = useQueryState('id');
-    const [search, setSearchInUrl] = useQueryState('s');
-    const [order, setOrderByInUrl] = useQueryState('order', {defaultValue: OrderBy.NameASC.toString()});
+    const [search] = useQueryState('s');
+    const [order] = useQueryState('order', {defaultValue: OrderByOptions[0]});
 
-    const [characters, dispatchCharacters] = useReducer(charactersReducer, FilterCharacters(NPCs, search ? search : undefined, order as OrderBy));
+    const [characters, dispatchCharacters] = useReducer(charactersReducer, FilterCharacters(NPCs, search ? search : undefined, order));
     const [activeModalCharacter, dispatchActiveModalCharacter] = useReducer(activeModalCharacterReducer, GetCharacterById(characters, id));
 
     const closeModal = (): void => {
@@ -51,15 +51,10 @@ export default function CharacterList() {
     }
 
     const handleSearch = useDebouncedCallback((term: string) => {
-        let orderBy: OrderBy | undefined = undefined;
-        if (order && order in OrderBy) {
-            orderBy = order as OrderBy;
-        }
-
         dispatchCharacters({
             Action: filterAction.Search,
             Search: term,
-            OrderBy: orderBy,
+            OrderBy: order,
         })
     }, 500)
 
@@ -69,11 +64,9 @@ export default function CharacterList() {
                 searchTerm={search ? search : undefined}
                 defaultOrder={order}
                 onSearchChange={(searchTerm: string) => {
-                    setSearchInUrl(searchTerm);
                     handleSearch(searchTerm);
                 }}
-                onOrderChange={(order: OrderBy) => {
-                    setOrderByInUrl(order);
+                onOrderChange={(order: string) => {
                     dispatchCharacters({
                         Action: filterAction.Order,
                         Search: search ? search : undefined,

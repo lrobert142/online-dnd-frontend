@@ -4,6 +4,7 @@
     --foreground: #171717;
     --foreground-darker: #272727;
 
+    --gap-xxs: 0.15rem;
     --gap-xs: 0.25rem;
     --gap-s: 0.5rem;
     --gap-m: 1rem;

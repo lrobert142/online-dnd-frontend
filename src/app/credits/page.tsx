@@ -76,6 +76,10 @@ export default function Credits() {
                     <Link href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">NextJS</Link> for
                     providing a solid foundation to build off of
                 </li>
+                <li>
+                    <Link href="https://react-svgr.com/" target="_blank" rel="noopener noreferrer">SVGR</Link> for
+                    converting SVGs to React components
+                </li>
             </ul>
         </div>
     )

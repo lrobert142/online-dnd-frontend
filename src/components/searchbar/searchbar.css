@@ -1,0 +1,13 @@
+#searchbar {
+    display: block;
+    width: 100%;
+    padding: var(--gap-m);
+    border-radius: 1rem;
+}
+
+@media (max-width: 400px) {
+    #searchbar {
+        margin-bottom: var(--gap-s);
+    }
+}
+

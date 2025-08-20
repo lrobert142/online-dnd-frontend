@@ -395,6 +395,7 @@ export const NPCs: Character[] = [
             is necessary, often giving the outward appearance of a uncaring individual.`,
             `Recently they have been snooping on the cultists that have moved into the ruins of Thundertree and trying
             to avoid angering the dragon that has made its home there.`,
+            `After a fearful misunderstanding about a dragon sacrifice he fled the town. His current whereabouts are unknown.`,
         ],
         location: "Thundertree",
         isAlive: true,

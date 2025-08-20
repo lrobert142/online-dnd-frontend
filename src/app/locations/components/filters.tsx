@@ -1,8 +1,8 @@
-import "./filters.css"
+import './filters.css'
 
-import {OrderByOptions} from "@/types/character";
 import Searchbar from "@/components/searchbar/searchbar";
 import OrderByFilter from "@/components/order-by-filter/order-by-filter";
+import {OrderByOptions} from "@/types/location";
 
 type filtersProps = {
     searchTerm?: string;
@@ -13,7 +13,7 @@ type filtersProps = {
 
 export default function Filters(props: filtersProps) {
     return (
-        <div id="character-filters">
+        <div id="locations-filters">
             <Searchbar searchTerm={props.searchTerm} onSearchChange={props.onSearchChange}/>
             <div className="filters-container">
                 <OrderByFilter options={OrderByOptions} defaultOrder={props.defaultOrder}

@@ -18,6 +18,10 @@
                 color: var(--foreground-darker);
             }
         }
+
+        &.active {
+            font-weight: bold;
+        }
     }
 
     :last-child {

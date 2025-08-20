@@ -12,10 +12,7 @@ export type Character = {
     isAlive: boolean;
 };
 
-export enum OrderBy {
-    NameASC = "Name (A-Z)",
-    NameDESC = "Name (Z-A)",
-}
+export const OrderByOptions: string[] = ["Name (A-Z)", "Name (Z-A)"]
 
 export const GetCharacterById = function (characters: Character[], id: string | null): Character | undefined {
     if (characters.length && id?.length) {
@@ -24,7 +21,7 @@ export const GetCharacterById = function (characters: Character[], id: string | 
     return undefined;
 }
 
-export const FilterCharacters = function (characters: Character[], searchTerm?: string, orderBy?: OrderBy): Character[] {
+export const FilterCharacters = function (characters: Character[], searchTerm?: string, orderBy?: string): Character[] {
     let filteredCharacters: Character[] = characters;
 
     if (searchTerm) {
@@ -40,16 +37,16 @@ export const FilterCharacters = function (characters: Character[], searchTerm?: 
     return filteredCharacters
 }
 
-function orderCharacters(characters: Character[], orderBy?: OrderBy): Character[] {
+function orderCharacters(characters: Character[], orderBy?: string): Character[] {
     let sortFn;
 
     switch (orderBy) {
-        case OrderBy.NameASC:
+        case OrderByOptions[0]:
             sortFn = function (a: Character, b: Character): number {
                 return sortAsc(a.name, b.name)
             }
             break;
-        case OrderBy.NameDESC:
+        case OrderByOptions[1]:
             sortFn = function (a: Character, b: Character): number {
                 return sortDesc(a.name, b.name)
             }

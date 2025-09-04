@@ -1,3 +1,31 @@
+#tabs-container {
+    display: block;
+    width: 100%;
+
+    .tab {
+        display: inline-block;
+        text-align: center;
+        padding: var(--gap-m);
+        border: 1px solid var(--foreground);
+        cursor: pointer;
+    }
+
+    .tab.active {
+        background: var(--foreground);
+        color: var(--background);
+    }
+
+    .tab:hover {
+        opacity: 0.75;
+    }
+}
+
 #fantasyMap {
     margin-bottom: var(--gap-l);
+}
+
+#locations {
+    .filters-container {
+        text-align: right;
+    }
 }

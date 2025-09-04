@@ -8,9 +8,10 @@ import {useDebouncedCallback} from 'use-debounce';
 
 import {NPCs} from "@/res/npcs";
 import {Character, FilterCharacters, GetCharacterById, OrderByOptions} from "@/types/character";
-import Modal from "@/app/character-list/components/modal";
-import Filters from "@/app/character-list/components/filters";
+import ModalContent from "@/app/character-list/components/modal-content";
 import PortraitsView from "@/app/character-list/components/portraits-view";
+import Filters from "@/components/filters/filters";
+import Modal from "@/components/modal/modal";
 
 function activeModalCharacterReducer(_?: Character, newChar?: Character): Character | undefined {
     return newChar
@@ -38,9 +39,13 @@ function charactersReducer(prevChars: Character[], action: charactersAction): Ch
 }
 
 export default function CharacterList() {
-    const [id, setIdInUrl] = useQueryState('id');
-    const [search] = useQueryState('s');
-    const [order] = useQueryState('order', {defaultValue: OrderByOptions[0]});
+    const idKey = "character-id";
+    const searchKey = "character-search";
+    const orderByKey = "character-order-by";
+
+    const [id, setIdInUrl] = useQueryState(idKey);
+    const [search] = useQueryState(searchKey);
+    const [order] = useQueryState(orderByKey, {defaultValue: OrderByOptions[0]});
 
     const [characters, dispatchCharacters] = useReducer(charactersReducer, FilterCharacters(NPCs, search ? search : undefined, order));
     const [activeModalCharacter, dispatchActiveModalCharacter] = useReducer(activeModalCharacterReducer, GetCharacterById(characters, id));
@@ -61,11 +66,14 @@ export default function CharacterList() {
     return (
         <div id="character-list">
             <Filters
+                searchKey={searchKey}
                 searchTerm={search ? search : undefined}
-                defaultOrder={order}
                 onSearchChange={(searchTerm: string) => {
                     handleSearch(searchTerm);
                 }}
+                orderByKey={orderByKey}
+                defaultOrderBy={order}
+                orderByOptions={OrderByOptions}
                 onOrderChange={(order: string) => {
                     dispatchCharacters({
                         Action: filterAction.Order,
@@ -81,10 +89,8 @@ export default function CharacterList() {
                     dispatchActiveModalCharacter(character)
                 }}
             />
-            <Modal
-                character={activeModalCharacter}
-                closeModal={closeModal}
-            />
+            <Modal onClose={closeModal}
+                   content={activeModalCharacter ? <ModalContent character={activeModalCharacter}/> : undefined}/>
         </div>
     )
 }

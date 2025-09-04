@@ -1,4 +1,4 @@
-#searchbar {
+.searchbar {
     display: block;
     width: 100%;
     padding: var(--gap-m);
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 400px) {
-    #searchbar {
+    .searchbar {
         margin-bottom: var(--gap-s);
     }
 }

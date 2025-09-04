@@ -417,4 +417,55 @@ export const NPCs: Character[] = [
         location: "Thundertree",
         isAlive: false,
     },
+    {
+        id: "00bc6756-f74b-40f8-8619-d89dee460d69",
+        name: "Aldis Raverex",
+        image: "/npc/aldis-raverex.png",
+        species: "kangaroo",
+        gender: "Male",
+        occupation: "King",
+        description: [
+            `The king of Andoril who rules alongside his wife, Queen Sianne, in Baldur's Gate. He has ruled for nearly
+            20 years and is widely considered a kind, just, and peaceful King who consistently puts his subject's
+            wellbeing above his own. His work to grow the Divine districts with temples to new gods has earned him many
+            allies.`,
+        ],
+        location: "Baldur's Gate",
+        isAlive: true,
+    },
+    {
+        id: "48f530e8-472d-49a2-9b90-621774bdb9ba",
+        name: "Sianne Raverex",
+        image: "/npc/sianne-raverex.png",
+        species: "cassowary",
+        gender: "Female",
+        occupation: "Queen",
+        description: [
+            `The queen of Andoril who rules alongside her husband, King Aldis, in Baldur's Gate. She has ruled alongside
+            her husband for just under twenty years and is known to be direct, and firm but fair. She is highly regarded
+            as a shrew diplomat who is able to smooth over deals many others would dread to ever be challenged with.`
+        ],
+        location: "Baldur's Gate",
+        isAlive: true,
+    },
+    {
+        id: "d443fd4c-caa6-4133-97ff-8769c6cc7d10",
+        name: "Pete \"Peet\" McBuggins",
+        image: "/npc/pete-mcbuggins.jpeg",
+        species: "Aarakocra",
+        gender: "Male",
+        occupation: "Farmer/Mayor",
+        description: [
+            `A quiet and stoic retired adventurer who is never seen without his wolf companion. His keen eyes, firm but
+            fair attitude, and solid sense of right and wrong have lead to him being the one many people look up to when
+            in times of need.`,
+            `After retiring from adventuring to settle down to a quiet life and return to his farming roots, he set up a
+            small home in the forest to enjoy his retirement in peace. However, over time people began to join him and
+            eventually he established a small village called Wolfhaven which he acts as the mayor for.`,
+            `He has one son - Petee McBuggins - whom he cares for deeply. Strangely enough nobody has ever seen him with
+            the mother - or any woman for that matter - and Peet himself refuses to answer any questions about her.`,
+        ],
+        location: "Wolfhaven",
+        isAlive: true,
+    },
 ];

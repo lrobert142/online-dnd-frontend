@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import "./nav.css"
 import Link from "next/link";

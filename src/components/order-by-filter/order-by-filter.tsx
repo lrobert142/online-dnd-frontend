@@ -3,13 +3,14 @@ import "./order-by-filter.css"
 import {useQueryState} from "nuqs";
 
 type OrderByFilterProps = {
+    orderKey: string;
     options: string[];
     defaultOrder?: string;
     onOrderChange: (order: string) => void;
 }
 
 export default function OrderByFilter(props: OrderByFilterProps) {
-    const [order, setOrderByInUrl] = useQueryState('order', {defaultValue: props.defaultOrder ? props.defaultOrder : ""});
+    const [order, setOrderByInUrl] = useQueryState(props.orderKey, {defaultValue: props.defaultOrder ? props.defaultOrder : ""});
 
     const orderByOptions = [];
     for (const i in props.options) {
@@ -20,7 +21,7 @@ export default function OrderByFilter(props: OrderByFilterProps) {
     return (
         <div className="order-by-container">
             <span className="order-by-label">Order by:&nbsp;</span>
-            <select id="order-by-select" name="order-by"
+            <select className="order-by-select" name="order-by"
                     defaultValue={order}
                     onChange={(e) => {
                         setOrderByInUrl(e.target.value);

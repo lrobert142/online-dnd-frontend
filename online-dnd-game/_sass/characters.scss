@@ -1,0 +1,137 @@
+#character-list {
+  max-width: var(--page-max-width-l);
+  margin: 0 auto;
+
+  .filters-and-searchbar {
+    padding: 0 var(--gap-l);
+  }
+
+  .filters-container {
+    text-align: right;
+  }
+}
+
+#portraits-view {
+  padding: var(--gap-m);
+  text-align: center;
+
+  .character-portrait {
+    position: relative;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    margin: 0 var(--gap-m) var(--gap-m) 0;
+    cursor: pointer;
+
+    .name {
+      position: absolute;
+      display: block;
+      width: 100%;
+      margin: 0;
+      bottom: 0;
+      text-align: center;
+      font-size: 0.75em;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      line-height: 2rem;
+      transition: line-height 0.2s ease-in-out;
+    }
+
+    &:hover {
+      .name {
+        background-color: rgba(0, 0, 0, 0.65);
+        line-height: 2.5rem;
+      }
+    }
+  }
+
+  .deceased-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0.5;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  @media (max-width: 400px) {
+    .character-portrait {
+      margin-right: 0;
+    }
+  }
+}
+
+#modal {
+  .portrait {
+    position: relative;
+    float: left;
+    margin: 0 var(--gap-l) var(--gap-m) 0;
+    display: inline-block;
+  }
+
+  .occupation-title, .location-title, .description-title {
+    margin: 0;
+  }
+
+  .gender-and-species, .occupation, .location, .description {
+    margin-top: var(--gap-xs);
+  }
+
+  .name {
+    margin: 0;
+  }
+
+  .gender-and-species {
+    margin-top: var(--gap-xs);
+    font-size: 0.85rem;
+  }
+
+  .gender, .species {
+    text-transform: capitalize;
+    font-style: italic;
+  }
+
+  @media (max-width: 600px) {
+    padding: var(--gap-s);
+
+    .portrait {
+      margin-right: var(--gap-m);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .name {
+      font-size: 1.5rem;
+    }
+
+    .occupation-title, .location-title, .description-title {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .description-title {
+      clear: both;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .portrait {
+      margin: 0 0 var(--gap-m) calc(50% - 100px);
+    }
+
+    .name, .occupation-title, .location-title, .description-title, .gender-and-species, .occupation, .location {
+      margin-bottom: var(--gap-s);
+      clear: both;
+      text-align: center;
+    }
+  }
+}

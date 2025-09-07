@@ -4,15 +4,14 @@
              src="assets/img/npc/200x300/{{include.npc.image}}"
              alt={{include.npc.name}}
              width="200" height="300"/>
-        {% if include.npc.isAlive == false %}
+        {%- if include.npc.isAlive == false -%}
         <img class="deceased-overlay"
              src="assets/img/general/200x300/skull.png"
              alt="{{include.npc.name}} is deceased"
              width="200"
              height="300"
         />
-        {% endif %}
-
+        {%- endif -%}
     </a>
     <h1 class="name">{{include.npc.name}}</h1>
     <p class="gender-and-species">

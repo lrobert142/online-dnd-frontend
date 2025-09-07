@@ -5,7 +5,7 @@
              alt={{include.npc.name}}
              width="200" height="300"/>
         {% if include.npc.isAlive == false %}
-        <img class="image"
+        <img class="deceased-overlay"
              src="assets/img/general/200x300/skull.png"
              alt="{{include.npc.name}} is deceased"
              width="200"
@@ -16,9 +16,7 @@
     </a>
     <h1 class="name">{{include.npc.name}}</h1>
     <p class="gender-and-species">
-        <span class="gender">{{include.npc.gender}}</span>
-        &nbsp;
-        <span class="species">{{include.npc.species}}</span>
+        <span class="gender">{{include.npc.gender}}</span>&nbsp;<span class="species">{{include.npc.species}}</span>
     </p>
     <h2 class="occupation-title">Occupation</h2>
     <p class="occupation">{{include.npc.occupation}}</p>

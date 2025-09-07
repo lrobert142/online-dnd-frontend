@@ -8,6 +8,7 @@
   background-color: rgba(0, 0, 0, 0.65);
   padding: var(--gap-l);
   overflow: hidden;
+  z-index: 100;
 
   &.hide {
     display: none;

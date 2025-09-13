@@ -1,0 +1,35 @@
+---
+layout: default
+title: Locations
+---
+<div id="locations">
+    <div id="tabs-container">
+        {%- for plane in site.data.planes -%}
+        <div id="tab-{{plane.identifier}}" class="tab" onclick='makeLocationTabActive("{{plane.identifier}}")'>
+            {{plane.name}}
+        </div>
+        {%- endfor -%}
+    </div>
+
+    <div id="plane-container-{{site.data.planes[0].identifier}}" class="plane-container">
+        {%- include qeenek.html -%}
+        <p class="material-plane-map-welcome">Welcome to the world of Qeenek!</p>
+        <!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
+        <h1 class="locations-list-heading">Locations</h1>
+        {%- include components/locations-list.html locations=site.materialPlaneLocations -%}
+    </div>
+    <div id="plane-container-{{site.data.planes[1].identifier}}" class="plane-container">
+        <blockquote class="feywild-quote">
+            "In The Feywild, the only constant is change."
+            <div>- Cartographer's Guild</div>
+        </blockquote>
+        <p class="feywild-map-warning">
+            Due to the ever-changing nature of The Feywild, it is impossible to map it, and therefore impossible to
+            represent here. Each demi-plane, aspect, area, and more is completely at the whims of the archfey that rules
+            over it. Woe be unto those who attempt to establish order from this kind of chaos.
+        </p>
+        <!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
+        <h1 class="locations-list-heading">Locations</h1>
+        {%- include components/locations-list.html locations=site.feywildLocations -%}
+    </div>
+</div>

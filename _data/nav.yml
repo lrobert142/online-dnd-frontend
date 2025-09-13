@@ -1,0 +1,8 @@
+- name: Home
+  link: /
+- name: Characters
+  link: /characters.html
+- name: Locations
+  link: /locations.html
+- name: Lore
+  link: /lore.html

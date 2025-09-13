@@ -1,0 +1,24 @@
+---
+---
+// Global styles
+@use "globals";
+
+// Styles of components that are used across the *entire* site
+@use "nav";
+@use "footer";
+@use "modal";
+@use "character-modal-content";
+@use "location-modal-content";
+
+// Page specific styles
+@use "index";
+@use "characters";
+@use "locations";
+@use "lore";
+@use "post";
+@use "credits";
+
+// Individual posts
+@use "_posts/types-of-magic";
+@use "_posts/the-feywild";
+@use "_posts/midnights-embrace";

@@ -1,0 +1,8 @@
+collections:
+  npcs:
+  materialPlaneLocations:
+  feywildLocations:
+
+characterUrlKey: "character-id"
+locationUrlKey: "location-id"
+locationTabUrlKey: "location-tab"

@@ -1,0 +1,33 @@
+---
+layout: default
+title: Characters
+---
+<!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
+<div id="character-list">
+    <div id="portraits-view">
+        {% for npc in site.npcs %}
+        <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
+            <img src="assets/img/npc/200x300/{{npc.image}}"
+                 alt={{npc.name}}
+                 width="200"
+                 height="300"
+            />
+            {% if npc.isAlive == false %}
+            <img class="deceased-overlay"
+                 src="assets/img/general/200x300/skull.png"
+                 alt="{{npc.name}} is deceased"
+                 width="200"
+                 height="300"
+            />
+            {% endif %}
+            <p class="name">{{npc.name}}</p>
+        </div>
+
+        {% capture modalContent %}
+        {% include components/character-modal-content.html npc=npc %}
+        {% endcapture %}
+        {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey modalContent=modalContent %}
+
+        {% endfor %}
+    </div>
+</div>

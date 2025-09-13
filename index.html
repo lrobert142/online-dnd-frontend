@@ -1,0 +1,22 @@
+---
+title: D&D Compendium
+layout: default
+---
+<div id="home">
+    <h1 class="heading">The Adventure Begins</h1>
+    <main class="hero-image-container">
+        {% for pc in site.data.pcs %}
+            {% capture image_src %}
+                /assets/img/pc/400x600/{{pc.image}}
+            {% endcapture %}
+            {% capture alt_text %}
+                PC - {{ pc.name }}
+            {% endcapture %}
+            {% capture annotation_text %}
+                {{ pc.name }}
+            {% endcapture %}
+
+            {% include components/annotated-image.html class="hero-image" src=image_src alt=alt_text width="400" height="600" annotation=annotation_text %}
+        {% endfor %}
+    </main>
+</div>

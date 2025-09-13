@@ -11,4 +11,14 @@
     border: 2px solid var(--foreground);
     border-radius: 2px;
   }
+
+  .float-left {
+    float: left;
+    margin: var(--gap-m) var(--gap-m) var(--gap-m) 0;
+  }
+
+  .float-right {
+    float: right;
+    margin: var(--gap-m) 0 var(--gap-m) var(--gap-m);
+  }
 }

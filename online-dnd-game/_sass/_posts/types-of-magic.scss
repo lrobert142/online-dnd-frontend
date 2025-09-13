@@ -6,14 +6,4 @@
   .sigil {
     max-height: 250px;
   }
-
-  .arcane-magic-sigil, .nature-magic-sigil {
-    float: left;
-    margin: var(--gap-m) var(--gap-m) var(--gap-m) 0;
-  }
-
-  .divine-magic-sigil {
-    float: right;
-    margin: var(--gap-m) 0 var(--gap-m) var(--gap-m);
-  }
 }

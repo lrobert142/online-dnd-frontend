@@ -103,3 +103,19 @@
   padding: 0 var(--gap-l);
   text-align: justify;
 }
+
+.tooltip {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  .tooltip-text {
+    fill: var(--foreground);
+  }
+}
+
+#markers > svg {
+  cursor: pointer;
+}

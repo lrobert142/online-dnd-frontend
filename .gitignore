@@ -1,2 +1,12 @@
-.DS_Store
 .idea/
+.DS_Store
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+
+# Generated project files
+assets/img/**/100x100
+assets/img/**/200x300
+assets/img/**/400x600

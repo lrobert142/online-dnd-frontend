@@ -1,7 +1,0 @@
-.plane-container {
-    display: none;
-
-    &.active {
-        display: block;
-    }
-}

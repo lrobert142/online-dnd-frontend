@@ -1,0 +1,14 @@
+.lore-article {
+  max-width: var(--page-max-width-m);
+  margin: 0 auto;
+
+  .lore-article-title {
+    text-align: center;
+    margin: 0 0 0 var(--gap-s);
+  }
+
+  .thick-separator {
+    border: 2px solid var(--foreground);
+    border-radius: 2px;
+  }
+}

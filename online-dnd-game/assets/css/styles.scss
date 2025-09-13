@@ -14,3 +14,9 @@
 @use "index";
 @use "characters";
 @use "locations";
+@use "lore";
+@use "post";
+
+// Individual posts
+@use "_posts/types-of-magic";
+@use "_posts/the-feywild";

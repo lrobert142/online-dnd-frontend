@@ -14,6 +14,8 @@
   --page-max-width-xl: 1500px;
   --page-max-width-l: 1200px;
   --page-max-width-m: 800px;
+
+  --border-radius-m: 5px;
 }
 
 :root:has(.no-doc-scroll) {
@@ -104,4 +106,8 @@ blockquote {
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+.clear-float {
+  clear: both;
 }

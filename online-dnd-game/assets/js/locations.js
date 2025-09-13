@@ -94,7 +94,7 @@ function addTooltipToMapMarker(locationId, locationName, markerId) {
     const marker = document.getElementById(markerId)
     const tooltipXPosition = marker.x.baseVal.value + 12 - tooltipGroup.getBBox().width / 2;
     const tooltipYPosition = marker.y.baseVal.value - 10 - tooltipGroup.getBBox().height / 2;
-    tooltipGroup.setAttribute("transform", "translate(" + tooltipXPosition + "," + tooltipYPosition +")");
+    tooltipGroup.setAttribute("transform", "translate(" + tooltipXPosition + "," + tooltipYPosition + ")");
 
     // Add the event listeners to toggle the tooltip display (via classes)
     marker.addEventListener("mouseenter", function () {

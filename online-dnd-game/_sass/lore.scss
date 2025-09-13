@@ -1,0 +1,48 @@
+// Overview page
+#lore {
+  max-width: var(--page-max-width-xl);
+  margin: 0 auto;
+  padding: 0 var(--gap-l);
+}
+
+.lore-page-title {
+  text-align: center;
+}
+
+.lore-article-cards-container {
+  list-style: none;
+
+  .lore-article-card {
+    display: inline-block;
+    width: calc(100% / 3 - (var(--gap-m) * 3));
+    margin: var(--gap-m);
+    border: 5px solid var(--foreground);
+    border-radius: var(--border-radius-m);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .card-link {
+    text-decoration: none;
+  }
+
+  .card-banner-image {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 270px;
+  }
+
+  .card-title {
+    text-align: center;
+    margin: var(--gap-s) 0;
+    padding: 0 var(--gap-m);
+  }
+
+  .card-excerpt {
+    padding: 0 var(--gap-m);
+    margin: var(--gap-m) 0;
+  }
+}

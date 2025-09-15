@@ -7,14 +7,14 @@ title: Characters
     <div id="portraits-view">
         {% for npc in site.npcs %}
         <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
-            <img src="{{site.baseurl}}assets/img/npc/200x300/{{npc.image}}"
+            <img src="{{site.baseurl}}/assets/img/npc/200x300/{{npc.image}}"
                  alt={{npc.name}}
                  width="200"
                  height="300"
             />
             {% if npc.isAlive == false %}
             <img class="deceased-overlay"
-                 src="{{site.baseurl}}assets/img/general/200x300/skull.png"
+                 src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
                  alt="{{npc.name}} is deceased"
                  width="200"
                  height="300"

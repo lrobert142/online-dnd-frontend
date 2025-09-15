@@ -1,12 +1,12 @@
 <div>
-    <a class="portrait" href="assets/img/npc/{{include.npc.image}}" target="_blank" rel="noopener noreferrer">
+    <a class="portrait" href="{{site.baseurl}}assets/img/npc/{{include.npc.image}}" target="_blank" rel="noopener noreferrer">
         <img class="image"
-             src="assets/img/npc/200x300/{{include.npc.image}}"
+             src="{{site.baseurl}}assets/img/npc/200x300/{{include.npc.image}}"
              alt={{include.npc.name}}
              width="200" height="300"/>
         {%- if include.npc.isAlive == false -%}
         <img class="deceased-overlay"
-             src="assets/img/general/200x300/skull.png"
+             src="{{site.baseurl}}assets/img/general/200x300/skull.png"
              alt="{{include.npc.name}} is deceased"
              width="200"
              height="300"

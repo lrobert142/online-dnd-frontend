@@ -8,8 +8,8 @@ title: Lore
     <ul class="lore-article-cards-container">
         {% for post in site.posts %}
         <li class="lore-article-card">
-            <a class="card-link" href="{{ post.url }}">
-                <img class="card-banner-image" src="{{ post.banner }}" alt="{{ post.title }}">
+            <a class="card-link" href="{{ post.url | relative_url }}">
+                <img class="card-banner-image" src="{{ post.banner | relative_url }}" alt="{{ post.title }}">
                 <h2 class="card-title">{{ post.title }}</h2>
                 <div class="card-excerpt">
                     {{ post.excerpt }}

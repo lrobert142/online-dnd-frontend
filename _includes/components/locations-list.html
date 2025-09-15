@@ -2,7 +2,7 @@
     {%- for location in include.locations -%}
     <div class="location-list-item" onClick='showModal("{{location.identifier}}", "{{site.locationUrlKey}}")'>
         <img class="minimap"
-             src="assets/img/location/100x100/{{location.image}}"
+             src="{{site.baseurl}}assets/img/location/100x100/{{location.image}}"
              alt={{location.name}}
              width="100"
              height="100"

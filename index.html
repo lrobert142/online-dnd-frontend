@@ -7,7 +7,7 @@ layout: default
     <main class="hero-image-container">
         {% for pc in site.data.pcs %}
             {% capture image_src %}
-                /assets/img/pc/400x600/{{pc.image}}
+                {{site.baseurl}}/assets/img/pc/400x600/{{pc.image}}
             {% endcapture %}
             {% capture alt_text %}
                 PC - {{ pc.name }}

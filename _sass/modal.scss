@@ -57,7 +57,7 @@
     position: relative;
     padding: var(--gap-l);
     border-radius: 0.5rem;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: var(--background);
     max-height: 80vh;
     overflow: auto;
     text-align: left;

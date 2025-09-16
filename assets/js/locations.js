@@ -28,6 +28,12 @@ window.onload = () => {
     addTooltipToMapMarker("bae4178c-a1b7-48ec-90cd-6165b3cb2a44", "Phandalin", "marker69")
     addTooltipToMapMarker("c8b535d2-62b8-4ea9-921f-3f8957d91042", "Wolfhaven", "marker70")
     addTooltipToMapMarker("50905b22-27d5-496c-aa27-d2c90659f8ff", "Windsore Planes", "marker71")
+
+    // For now this will be manual. Maybe later I will automate this
+    const profanedCapital = document.getElementById("burgLabel3");
+    profanedCapital.addEventListener("click", function () {
+        showModal("59af4720-25af-4d9c-a814-c71afa539542", "{{site.locationUrlKey}}")
+    })
 }
 
 function makeLocationTabActive(id) {

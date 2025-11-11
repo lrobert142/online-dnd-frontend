@@ -1,6 +1,10 @@
 ---
 ---
-window.onload = () => {
+function initLocations() {
+    if (!document.getElementById('locations')) {
+        return;
+    }
+
     const url = new URL(window.location.href);
     // Select the right tab
     if (url.searchParams.has("{{site.locationTabUrlKey}}")) {

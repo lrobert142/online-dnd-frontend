@@ -1,0 +1,23 @@
+.collapsible-button {
+  cursor: pointer;
+  padding: var(--gap-xs);
+}
+
+.collapsible-button:after {
+  content: '\002B';
+  color: var(--foreground);
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapsible-button.active:after {
+  content: "\2212";
+}
+
+.collapsible-content {
+  background: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

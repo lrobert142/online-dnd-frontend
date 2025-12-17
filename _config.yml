@@ -1,8 +1,16 @@
+collections_dir: collections
 collections:
-  npcs:
-  materialPlaneLocations:
-  feywildLocations:
+  #Characters
+  charactersLostMinesOfPhandelver:
+  charactersBastionHelpers:
+  charactersBaldursGate:
+  charactersRecurringCharacters:
+  # Locations
+  locationsMaterialPlane:
+  locationsFeywild:
 
+
+# Special keys used in the URL
 characterUrlKey: "character-id"
 locationUrlKey: "location-id"
 locationTabUrlKey: "location-tab"

@@ -16,7 +16,7 @@ title: Locations
         <p class="material-plane-map-welcome">Welcome to the world of Qeenek!</p>
         <!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
         <h1 class="locations-list-heading">Locations</h1>
-        {%- include components/locations-list.html locations=site.materialPlaneLocations -%}
+        {%- include components/locations-list.html locations=site.locationsMaterialPlane -%}
     </div>
     <div id="plane-container-{{site.data.planes[1].identifier}}" class="plane-container">
         <blockquote class="feywild-quote">
@@ -30,6 +30,6 @@ title: Locations
         </p>
         <!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
         <h1 class="locations-list-heading">Locations</h1>
-        {%- include components/locations-list.html locations=site.feywildLocations -%}
+        {%- include components/locations-list.html locations=site.locationsFeywild -%}
     </div>
 </div>

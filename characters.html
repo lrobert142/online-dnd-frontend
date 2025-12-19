@@ -29,8 +29,7 @@ title: Characters
             {% include components/character-modal-content.html npc=npc %}
             {% endcapture %}
             {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey
-            modalContent=modalContent
-            %}
+            modalContent=modalContent %}
 
             {% endfor %}
         </div>
@@ -38,6 +37,35 @@ title: Characters
         <h1 class="characters-section-heading collapsible-button">Recurring Characters</h1>
         <div class="collapsible-content">
             {% for npc in site.charactersRecurringCharacters %}
+            <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
+                <img src="{{site.baseurl}}/assets/img/npc/200x300/{{npc.image}}"
+                     alt={{npc.name}}
+                     width="200"
+                     height="300"
+                />
+                {% if npc.isAlive == false %}
+                <img class="deceased-overlay"
+                     src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
+                     alt="{{npc.name}} is deceased"
+                     width="200"
+                     height="300"
+                />
+                {% endif %}
+                <p class="name">{{npc.name}}</p>
+            </div>
+
+            {% capture modalContent %}
+            {% include components/character-modal-content.html npc=npc %}
+            {% endcapture %}
+            {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey
+            modalContent=modalContent %}
+
+            {% endfor %}
+        </div>
+
+        <h1 class="characters-section-heading collapsible-button">Bastion Helpers</h1>
+        <div class="collapsible-content">
+            {% for npc in site.charactersBastionHelpers %}
             <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
                 <img src="{{site.baseurl}}/assets/img/npc/200x300/{{npc.image}}"
                      alt={{npc.name}}
@@ -88,8 +116,7 @@ title: Characters
             {% include components/character-modal-content.html npc=npc %}
             {% endcapture %}
             {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey
-            modalContent=modalContent
-            %}
+            modalContent=modalContent %}
 
             {% endfor %}
         </div>

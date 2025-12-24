@@ -28,6 +28,20 @@
     font-style: italic;
   }
 
+  .float-left {
+    float: left;
+    margin: var(--gap-m) var(--gap-m) var(--gap-m) 0;
+  }
+
+  .float-right {
+    float: right;
+    margin: var(--gap-m) 0 var(--gap-m) var(--gap-m);
+  }
+
+  .clear {
+    clear: both;
+  }
+
   @media (max-width: 600px) {
     padding: var(--gap-s);
 

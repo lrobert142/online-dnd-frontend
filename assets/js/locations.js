@@ -29,12 +29,12 @@ function initLocations() {
     }
 
     // For now this will be manual. Maybe later I will automate this
-    addTooltipToMapMarker("bae4178c-a1b7-48ec-90cd-6165b3cb2a44", "Phandalin", "marker69")
-    addTooltipToMapMarker("c8b535d2-62b8-4ea9-921f-3f8957d91042", "Wolfhaven", "marker70")
-    addTooltipToMapMarker("50905b22-27d5-496c-aa27-d2c90659f8ff", "Windsore Planes", "marker71")
-
-    // For now this will be manual. Maybe later I will automate this
     const labels = [
+        [document.getElementById("burgLabel480"), "50905b22-27d5-496c-aa27-d2c90659f8ff"], //Windsore Planes
+        [document.getElementById("burgLabel87"), "bae4178c-a1b7-48ec-90cd-6165b3cb2a44"], //Phandalin
+        [document.getElementById("burgLabel329"), "c8b535d2-62b8-4ea9-921f-3f8957d91042"], //Wolfhaven
+        [document.getElementById("burgLabel481"), "846c0fe8-df38-4531-bcee-bdb2e9b1b50c"], //Thundertree
+
         [document.getElementById("label1"), "580c0304-e112-4bcf-84ca-4823902bcf14"], //Zyxs
         [document.getElementById("label2"), "607d1a32-e2de-4cb2-b9f6-4188636e4609"], //Navirar
         [document.getElementById("stateLabel23"), "2346b690-8428-47ae-9cdf-dc346616c123"], //Kingdom of Five Emperors
@@ -65,6 +65,7 @@ function initLocations() {
     ];
 
     for (const [element, id] of labels) {
+        element.style.cursor = "pointer";
         element.addEventListener("click", function () {
             showModal(id, "{{site.locationUrlKey}}")
         })
@@ -90,63 +91,4 @@ function makeLocationTabActive(id) {
     const url = new URL(window.location.href);
     url.searchParams.set("{{site.locationTabUrlKey}}", id);
     window.history.pushState({}, "", url.toString())
-}
-
-function addTooltipToMapMarker(locationId, locationName, markerId) {
-    const qeenekMap = document.getElementById("fantasyMap");
-
-    // Create the group and append it to the map
-    const tooltipGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
-    tooltipGroup.setAttribute("id", "tooltip-" + locationId);
-    tooltipGroup.setAttribute("class", "tooltip");
-    qeenekMap.appendChild(tooltipGroup);
-
-    // Set up the text
-    const tooltipText = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    tooltipText.textContent = locationName;
-    tooltipText.setAttribute("class", "tooltip-text");
-    tooltipGroup.appendChild(tooltipText);
-    const tooltipTextBbox = tooltipText.getBBox();
-
-    // Set up the background box for the text
-    const tooltipRectExtraWidth = 20
-    const tooltipRectExtraHeight = 10
-    const tooltipRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    tooltipRect.setAttribute("width", tooltipTextBbox.width + tooltipRectExtraWidth + "");
-    tooltipRect.setAttribute("height", tooltipTextBbox.height + tooltipRectExtraHeight + "");
-    tooltipGroup.appendChild(tooltipRect);
-    const tooltipRectBbox = tooltipRect.getBBox();
-
-    // Set up the triangle that attacked to the pin
-    const tooltipTriangle = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-    const tooltipTriangleWidth = 5
-    tooltipTriangle.setAttribute("points", "0,0 10,0 " + tooltipTriangleWidth + ",10");
-    tooltipTriangle.setAttribute("transform", "translate(" + ((-tooltipTriangleWidth / 2) + tooltipRectBbox.width / 2) + ", " + tooltipRectBbox.height + ")");
-    tooltipGroup.appendChild(tooltipTriangle);
-
-    // Align the text in the center of the rectangle
-    tooltipText.setAttribute("transform", "translate(" + (tooltipRectExtraWidth / 2) + ", " + (tooltipRectExtraHeight * 2) + ")");
-
-    // Remove and re-add the text to sort out the layering issues (otherwise the box will be above the text)
-    tooltipGroup.removeChild(tooltipText);
-    tooltipGroup.appendChild(tooltipText);
-
-    // Move the tooltip to where it needs to be
-    const marker = document.getElementById(markerId)
-    const tooltipXPosition = marker.x.baseVal.value + 12 - tooltipGroup.getBBox().width / 2;
-    const tooltipYPosition = marker.y.baseVal.value - 10 - tooltipGroup.getBBox().height / 2;
-    tooltipGroup.setAttribute("transform", "translate(" + tooltipXPosition + "," + tooltipYPosition + ")");
-
-    // Add the event listeners to toggle the tooltip display (via classes)
-    marker.addEventListener("mouseenter", function () {
-        tooltipGroup.classList.add("show");
-    });
-    marker.addEventListener("mouseleave", function () {
-        tooltipGroup.classList.remove("show");
-    });
-
-    // While we're at it, add click handlers to the marker itself too
-    marker.addEventListener("click", function () {
-        showModal(locationId, "{{site.locationUrlKey}}")
-    })
 }

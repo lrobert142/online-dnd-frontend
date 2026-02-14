@@ -10,6 +10,7 @@
         <!-- Page-specific -->
         <script src="{{ '/assets/js/characters.js' | relative_url }}"></script>
         <script src="{{ '/assets/js/locations.js' | relative_url }}"></script>
+        <!-- Everything that needs to be loaded on window load completion -->
         <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     </head>
     <body>
@@ -17,4 +18,6 @@
         {{ content }}
         {% include footer.html %}
     </body>
+    <!-- These items affect things in the DOM and must be loaded after those are loaded -->
+    <script src="{{ '/assets/js/qeenek-map.js' | relative_url }}"></script>
 </html>

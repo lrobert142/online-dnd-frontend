@@ -12,7 +12,9 @@ title: Locations
     </div>
 
     <div id="plane-container-{{site.data.planes[0].identifier}}" class="plane-container">
-        {%- include qeenek.html -%}
+        <div id="qeenek-container">
+            {%- include qeenek.html -%}
+        </div>
         <p class="material-plane-map-welcome">Welcome to the world of Qeenek!</p>
         <!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
         <h1 class="locations-list-heading">Locations</h1>

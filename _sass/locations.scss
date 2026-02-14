@@ -32,8 +32,45 @@
   margin-bottom: var(--gap-l);
 }
 
+#qeenek-container {
+  --zoom-size: 25px;
+  position: relative;
+
+  .scroll-container {
+    display: inline-block;
+    width: 100%;
+    height: 650px;
+    overflow: auto;
+  }
+
+  .zoom-control {
+    position: absolute;
+    top: var(--gap-xs);
+    right: var(--gap-xs);
+    display: inline-block;
+    width: var(--zoom-size);
+    height: var(--zoom-size);
+    line-height: 25px;
+    margin: 0;
+    background: var(--foreground);
+    color: var(--background);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  #zoom-out {
+    line-height: calc(var(--zoom-size) - 2px); //2px = magic number to visually center the symbol
+    top: calc(var(--zoom-size) + 5px);
+  }
+
+  #zoom-reset {
+    top: calc(var(--zoom-size) * 2 + 6px); //6px = magic number to visually offset alignment
+  }
+}
+
 #fantasyMap {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .plane-container {
@@ -93,6 +130,32 @@
   .clear {
     clear: both;
   }
+
+  @media (max-width: 1400px) {
+    .name {
+      font-size: 1rem;
+    }
+
+    .snippet {
+      font-size: .9rem;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    width: 100%;
+
+    &:nth-of-type(2n) {
+      border-left: none;
+    }
+
+    .name {
+      font-size: 1.25rem;
+    }
+
+    .snippet {
+      font-size: 1rem;
+    }
+  }
 }
 
 .feywild-quote {
@@ -102,47 +165,4 @@
 .feywild-map-warning {
   padding: 0 var(--gap-l);
   text-align: justify;
-}
-
-.tooltip {
-  display: none;
-
-  &.show {
-    display: block;
-  }
-
-  .tooltip-text {
-    fill: var(--foreground);
-  }
-}
-
-#markers > svg, #label1,
-#markers > svg, #label2,
-#markers > svg, #stateLabel23,
-
-#markers > svg, #stateLabel19,
-#markers > svg, #stateLabel20,
-#markers > svg, #stateLabel6,
-#markers > svg, #stateLabel14,
-#markers > svg, #stateLabel11,
-#markers > svg, #stateLabel3,
-#markers > svg, #stateLabel16,
-#markers > svg, #stateLabel10,
-
-#markers > svg, #burgLabel3,
-#markers > svg, #burgLabel240,
-
-#markers > svg, #stateLabel18,
-#markers > svg, #stateLabel13,
-#markers > svg, #stateLabel12,
-#markers > svg, #stateLabel15,
-#markers > svg, #stateLabel9,
-#markers > svg, #stateLabel2,
-#markers > svg, #stateLabel21,
-#markers > svg, #stateLabel1,
-#markers > svg, #stateLabel7,
-
-#markers > svg, #stateLabel22,
-{
-  cursor: pointer;
 }

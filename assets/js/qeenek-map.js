@@ -5,7 +5,8 @@ function initQeenekMap() {
         return;
     }
 
-    let currentZoom = 0.825;
+    const defaultZoom = 0.825;
+    let currentZoom = defaultZoom;
     const originalWidth = qeenekMapEl.getAttribute('width')
     const originalHeight = qeenekMapEl.getAttribute('height')
     qeenekMapEl.setAttribute("viewBox", "0 0 " + originalWidth + " " + originalHeight);
@@ -13,6 +14,21 @@ function initQeenekMap() {
     function resizeMap() {
         qeenekMapEl.setAttribute('width', `${(originalWidth * currentZoom)}`);
         qeenekMapEl.setAttribute('height', `${(originalHeight * currentZoom)}`);
+    }
+
+    function zoomIn(amount) {
+        currentZoom += amount
+        resizeMap()
+    }
+
+    function zoomOut(amount) {
+        currentZoom -= amount
+        resizeMap()
+    }
+
+    function resetZoom() {
+        currentZoom = defaultZoom
+        resizeMap()
     }
 
     // Get it to a close enough fit to the default viewport size
@@ -60,15 +76,9 @@ function initQeenekMap() {
     }
 
     return {
-        currentZoom: currentZoom,
-        zoomIn: (amount) => {
-            currentZoom += amount
-            resizeMap()
-        },
-        zoomOut: (amount) => {
-            currentZoom -= amount
-            resizeMap()
-        },
+        zoomIn: zoomIn,
+        zoomOut: zoomOut,
+        resetZoom: resetZoom,
     };
 }
 

@@ -13,7 +13,14 @@ title: Locations
 
     <div id="plane-container-{{site.data.planes[0].identifier}}" class="plane-container">
         <div id="qeenek-container">
-            {%- include qeenek.html -%}
+            <div class="zoom-container">
+                <span id="zoom-in" class="zoom-control" onclick="qeenekMap.zoomIn(0.1)">+</span>
+                <span id="zoom-out" class="zoom-control" onclick="qeenekMap.zoomOut(0.1)">-</span>
+                <span id="zoom-reset" class="zoom-control" onclick="qeenekMap.resetZoom()">↺</span>
+            </div>
+            <div class="scroll-container">
+                {%- include qeenek.html -%}
+            </div>
         </div>
         <p class="material-plane-map-welcome">Welcome to the world of Qeenek!</p>
         <!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->

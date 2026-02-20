@@ -82,19 +82,12 @@
   }
 }
 
-.locations-list-heading {
-  text-align: center;
-  border-bottom: 3px solid var(--foreground);
-  padding-bottom: var(--gap-xs);
-  margin-bottom: 0;
-}
-
 .location-list-item {
   --minimap-gap: var(--gap-m);
   --minimap-size: 100px;
 
   display: inline-block;
-  width: 50%;
+  width: calc(50% - var(--gap-m) / 2);
   padding: var(--gap-s);
   border-bottom: 1px solid var(--foreground);
   cursor: pointer;
@@ -158,6 +151,16 @@
   }
 }
 
+#plane-container-material-plane .searchbar {
+  width: calc(100% - 2 * var(--gap-m));
+  margin: 0 var(--gap-m) var(--gap-m) var(--gap-m) ;
+}
+
+#plane-container-the-feywild .searchbar {
+  width: calc(100% - 2 * var(--gap-m));
+  margin: 0 var(--gap-m) var(--gap-m) var(--gap-m) ;
+}
+
 .feywild-quote {
   text-align: center;
 }
@@ -165,4 +168,84 @@
 .feywild-map-warning {
   padding: 0 var(--gap-l);
   text-align: justify;
+}
+
+.feywild-split {
+  width: calc(100% - 2 * var(--gap-m));
+  margin: 0 var(--gap-m) var(--gap-l) var(--gap-m) ;
+}
+
+// Modal
+.modal {
+  * {
+    color: var(--foreground);
+  }
+
+  .map-link {
+    position: relative;
+    float: left;
+    margin: 0 var(--gap-l) var(--gap-m) 0;
+    display: inline-block;
+  }
+
+  .description-title {
+    margin: 0;
+  }
+
+  .type, .description {
+    margin-top: var(--gap-xs);
+  }
+
+  .name {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .pronunciation {
+    display: inline-block;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .type {
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  @media (max-width: 600px) {
+    padding: var(--gap-s);
+
+    .map-link {
+      margin-right: var(--gap-m);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .name {
+      font-size: 1.5rem;
+    }
+
+    .description-title {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .description-title {
+      clear: both;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .map-link {
+      margin: 0 0 var(--gap-m) calc(50% - 100px);
+    }
+
+    .name, .description-title {
+      margin-bottom: var(--gap-s);
+      clear: both;
+      text-align: center;
+    }
+  }
 }

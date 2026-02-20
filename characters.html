@@ -4,11 +4,11 @@ title: Characters
 ---
 
 <div id="character-list">
-    <input id="q" class="searchbar" type="search" placeholder="Type to search…" autocomplete="off">
+    <input id="character-searchbar" class="searchbar" type="search" placeholder="Search characters…" autocomplete="off">
     <div id="portraits-view">
 
         <template id="character-portrait-template">
-            <!-- Main display -->
+            <!-- Main list -->
             <div class="character-portrait">
                 <img class="portrait-image"
                      width="200"
@@ -49,6 +49,6 @@ title: Characters
             {% include components/modal-container.html customClass="character-modal" modalContent=modalContent %}
         </template>
 
-        <div id="results"></div>
+        <div id="characters"></div>
     </div>
 </div>

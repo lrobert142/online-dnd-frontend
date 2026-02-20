@@ -1,14 +1,6 @@
 #character-list {
   max-width: var(--page-max-width-l);
   margin: 0 auto;
-
-  .searchbar {
-    display: inline-block;
-    width: 100%;
-    border-radius: var(--border-radius-m);
-    padding: var(--gap-s);
-    font-weight: bold;
-  }
 }
 
 // Main display

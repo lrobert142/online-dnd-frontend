@@ -1,12 +1,5 @@
 collections_dir: collections
 collections:
   characters:
-  # Locations
   locationsMaterialPlane:
   locationsFeywild:
-
-
-# Special keys used in the URL
-characterUrlKey: "character-id"
-locationUrlKey: "location-id"
-locationTabUrlKey: "location-tab"

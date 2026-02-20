@@ -13,8 +13,8 @@ permalink: /search/characters.json
 "gender": {{ d.gender | jsonify }},
 "occupation": {{ d.occupation | jsonify }},
 "lastSeen": {{ d.lastSeen | jsonify }},
-"content": {{ d.content | markdownify | strip_newlines | replace: "  ", " " | jsonify }},
-"isAlive": {{ d.isAlive | jsonify }}
+"isAlive": {{ d.isAlive | jsonify }},
+"content": {{ d.content | markdownify | strip_newlines | replace: "  ", " " | jsonify }}
 }{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]

@@ -1,7 +1,8 @@
+<!-- FIXME: This file is deprecated in favour of modal-container.html -->
 <div id="modal-{{include.identifier}}" class="modal hide" onClick='closeModalOuterClick(event, "{{include.identifier}}", "{{include.urlKey}}")'>
     <div class="modal-center centre" onClick='closeModalOuterClick(event, "{{include.identifier}}", "{{include.urlKey}}")'>
         <div class="content">
-            <span class="close" onClick='closeModal("{{include.identifier}}", "{{include.urlKey}}")'></span>
+            <span class="close modal-close" onClick='closeModal("{{include.identifier}}", "{{include.urlKey}}")'></span>
             <div class="modal-content-container">
                 {{ include.modalContent }}
             </div>

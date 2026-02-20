@@ -6,7 +6,9 @@ title: Characters
 <div id="character-list">
     <input id="q" class="searchbar" type="search" placeholder="Type to search…" autocomplete="off">
     <div id="portraits-view">
+
         <template id="character-portrait-template">
+            <!-- Main display -->
             <div class="character-portrait">
                 <img class="portrait-image"
                      width="200"
@@ -20,37 +22,31 @@ title: Characters
                 <p class="name"></p>
             </div>
 
-            <!-- FIXME: Because the modal itself is used in multiple locations it would be good to have this part be generic via `include` -->
-            <div class="character-modal modal hide">
-                <div class="modal-center centre">
-                    <div class="content">
-                        <span class="close modal-close"></span>
-                        <div class="modal-content-container">
-                            <div>
-                                <a class="portrait" target="_blank" rel="noopener noreferrer">
-                                    <img class="image"
-                                         width="200" height="300"/>
-                                    <img class="deceased-overlay"
-                                         src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
-                                         width="200"
-                                         height="300"
-                                    />
-                                </a>
-                                <h1 class="name"></h1>
-                                <p class="gender-and-species">
-                                    <span class="gender"></span>&nbsp;<span class="species"></span>
-                                </p>
-                                <h2 class="occupation-title">Occupation</h2>
-                                <p class="occupation"></p>
-                                <h2 class="location-title">Last seen</h2>
-                                <p class="location"></p>
-                                <h2 class="description-title">About</h2>
-                                <div class="description"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {% capture modalContent %}
+            <div>
+                <a class="portrait" target="_blank" rel="noopener noreferrer">
+                    <img class="image"
+                         width="200" height="300"/>
+                    <img class="deceased-overlay"
+                         src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
+                         width="200"
+                         height="300"
+                    />
+                </a>
+                <h1 class="name"></h1>
+                <p class="gender-and-species">
+                    <span class="gender"></span>&nbsp;<span class="species"></span>
+                </p>
+                <h2 class="occupation-title">Occupation</h2>
+                <p class="occupation"></p>
+                <h2 class="location-title">Last seen</h2>
+                <p class="location"></p>
+                <h2 class="description-title">About</h2>
+                <div class="description"></div>
             </div>
+            {% endcapture %}
+
+            {% include components/modal-container.html customClass="character-modal" modalContent=modalContent %}
         </template>
 
         <div id="results"></div>

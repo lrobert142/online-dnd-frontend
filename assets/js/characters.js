@@ -88,7 +88,10 @@
     controller.searchNow().then(() => {
         const url = new URL(window.location.href);
         if (url.searchParams.has(characterUrlKey)) {
-            showModal(url.searchParams.get(characterUrlKey), characterUrlKey);
+            // Give it a slight delay to prevent race conditions. Navie, but it works.
+            setTimeout(() => {
+                showModal(url.searchParams.get(characterUrlKey), characterUrlKey);
+            }, 100)
         }
     });
 })();

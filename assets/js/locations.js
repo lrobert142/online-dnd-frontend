@@ -82,7 +82,10 @@
     materialPlaneController.searchNow().then(() => {
         const url = new URL(window.location.href);
         if (url.searchParams.has(locationUrlKey) && url.searchParams.get(locationTabUrlKey) === "material-plane") {
-            showModal(url.searchParams.get(locationUrlKey), locationUrlKey);
+            // Give it a slight delay to prevent race conditions. Navie, but it works.
+            setTimeout(() => {
+                showModal(url.searchParams.get(locationUrlKey), locationUrlKey);
+            }, 100)
         }
     });
 
@@ -100,7 +103,10 @@
     feywildController.searchNow().then(() => {
         const url = new URL(window.location.href);
         if (url.searchParams.has(locationUrlKey) && url.searchParams.get(locationTabUrlKey) === "the-feywild") {
-            showModal(url.searchParams.get(locationUrlKey), locationUrlKey);
+            // Give it a slight delay to prevent race conditions. Navie, but it works.
+            setTimeout(() => {
+                showModal(url.searchParams.get(locationUrlKey), locationUrlKey);
+            }, 100)
         }
     });
 

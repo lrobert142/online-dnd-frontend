@@ -1,11 +1,9 @@
+//FIXME: Can we make this generic to share between characters and locations? What about Material Plane and Feywilds (on same page, be careful!)
 (function () {
     // If we're not on the right page, immediately bail!
     if (!document.getElementById('character-list')) {
         return;
     }
-
-    const baseUrl = (window.SEARCH_BASEURL || "").replace(/\/$/, "");
-    const urlKey = "character-id"
 
     const searchbarEl = document.getElementById("q");
     const resultsEl = document.getElementById("results");
@@ -65,7 +63,7 @@
             const deceasedOverlayEl = portraitDivEl.querySelector(".deceased-overlay");
 
             portraitDivEl.onclick = () => {
-                showModal(doc.identifier, urlKey)
+                showModal(doc.identifier, characterUrlKey)
             }
             imageEl.src = `${baseUrl}/assets/img/npc/200x300/${doc.image}`;
             imageEl.alt = doc.name;
@@ -85,7 +83,9 @@
             const modalLastSeenEl = modalEl.querySelector(".location");
             const modalDescriptionEl = modalEl.querySelector(".description");
 
-            const closeModal = () => {closeModalOuterClick(event, doc.identifier, urlKey)}
+            const closeModal = () => {
+                closeModalOuterClick(event, doc.identifier, characterUrlKey)
+            }
 
             modalEl.id = `modal-${doc.identifier}`;
             modalEl.onclick = closeModal;
@@ -93,7 +93,7 @@
             modalCloseEl.onclick = closeModal;
             modalPortraitLinkEl.href = `${baseUrl}/assets/img/npc/${doc.image}`;
             modalPortraitImageEl.src = `${baseUrl}/assets/img/npc/200x300/${doc.image}`;
-            modalNameEl.alt = doc.name;
+            modalNameEl.innerHTML = doc.name;
             modalGenderEl.innerHTML = doc.gender;
             modalSpeciesEl.innerHTML = doc.species;
             modalOccupationEl.innerHTML = doc.occupation;
@@ -101,7 +101,7 @@
             modalDescriptionEl.innerHTML = doc.content;
 
 
-            // Special checks for whether the NPC is alive
+            // Special handling for whether the NPC is alive
             if (doc.isAlive) {
                 deceasedOverlayEl.classList.add("hide");
                 modalDeceasedOverlayEl.classList.add("hide");
@@ -124,13 +124,13 @@
         renderResults(hits, docsById);
     }
 
-    searchbarEl.addEventListener("input", doSearch);
+    const debouncedSearch = debounce(doSearch, 250);
+    searchbarEl.addEventListener("input", debouncedSearch);
     // Initialise
     doSearch().then(() => {
-        // Now see if we can display the default modal (if the URL params have an ID we should show)
         const url = new URL(window.location.href);
-        if (url.searchParams.has(urlKey)) {
-            showModal(url.searchParams.get(urlKey), urlKey)
+        if (url.searchParams.has(characterUrlKey)) {
+            showModal(url.searchParams.get(characterUrlKey), characterUrlKey)
         }
     });
 })();

@@ -4,19 +4,16 @@ title: Characters
 ---
 
 <div id="character-list">
-    <input id="q" type="search" placeholder="Type to search…" autocomplete="off">
+    <input id="q" class="searchbar" type="search" placeholder="Type to search…" autocomplete="off">
     <div id="portraits-view">
         <template id="character-portrait-template">
-            <div class="character-portrait" onClick="">
+            <div class="character-portrait">
                 <img class="portrait-image"
-                     src=""
-                     alt=""
                      width="200"
                      height="300"
                 />
                 <img class="deceased-overlay"
                      src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
-                     alt=""
                      width="200"
                      height="300"
                 />
@@ -24,20 +21,17 @@ title: Characters
             </div>
 
             <!-- FIXME: Because the modal itself is used in multiple locations it would be good to have this part be generic via `include` -->
-            <div id="" class="character-modal modal hide" onClick="">
-                <div class="modal-center centre" onClick="">
+            <div class="character-modal modal hide">
+                <div class="modal-center centre">
                     <div class="content">
-                        <span class="close" onClick=""></span>
+                        <span class="close modal-close"></span>
                         <div class="modal-content-container">
                             <div>
-                                <a class="portrait" href="" target="_blank" rel="noopener noreferrer">
+                                <a class="portrait" target="_blank" rel="noopener noreferrer">
                                     <img class="image"
-                                         src=""
-                                         alt=""
                                          width="200" height="300"/>
                                     <img class="deceased-overlay"
                                          src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
-                                         alt=""
                                          width="200"
                                          height="300"
                                     />
@@ -58,7 +52,7 @@ title: Characters
                 </div>
             </div>
         </template>
-        <h1>Characters</h1>
+
         <div id="results"></div>
     </div>
 </div>

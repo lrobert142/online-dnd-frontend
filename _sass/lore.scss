@@ -17,7 +17,7 @@
     width: calc(100% / 3 - (var(--gap-m) * 3));
     margin: var(--gap-m);
     border: 5px solid var(--foreground);
-    border-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-s);
 
     &:hover {
       opacity: 0.8;

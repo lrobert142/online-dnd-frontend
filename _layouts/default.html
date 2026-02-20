@@ -8,13 +8,13 @@
         <script src="https://unpkg.com/lunr/lunr.js"></script>
         <script>
             // Make baseurl-safe paths for GitHub Pages project sites
-            window.SEARCH_BASEURL = "{{ site.baseurl }}";
+            const baseUrl = ("{{ site.baseurl }}" || "").replace(/\/$/, "");
+            const characterUrlKey = "character-id"
         </script>
+        <script src="{{ '/assets/js/debounce.js' | relative_url }}"></script>
         <!-- Components -->
         <script src="{{ '/assets/js/modal.js' | relative_url }}"></script>
-        <script src="{{ '/assets/js/collapsible.js' | relative_url }}"></script>
         <!-- Page-specific -->
-        <script src="{{ '/assets/js/characters.js' | relative_url }}"></script>
         <script src="{{ '/assets/js/locations.js' | relative_url }}"></script>
         <!-- Everything that needs to be loaded on window load completion -->
         <script src="{{ '/assets/js/main.js' | relative_url }}"></script>

@@ -4,6 +4,12 @@
         <title>{{ page.title }}</title>
         <link rel="stylesheet" href="{{ '/assets/css/normalize.css' | relative_url }}">
         <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+        <!-- Libraries/Globals -->
+        <script src="https://unpkg.com/lunr/lunr.js"></script>
+        <script>
+            // Make baseurl-safe paths for GitHub Pages project sites
+            window.SEARCH_BASEURL = "{{ site.baseurl }}";
+        </script>
         <!-- Components -->
         <script src="{{ '/assets/js/modal.js' | relative_url }}"></script>
         <script src="{{ '/assets/js/collapsible.js' | relative_url }}"></script>
@@ -20,4 +26,5 @@
     </body>
     <!-- These items affect things in the DOM and must be loaded after those are loaded -->
     <script src="{{ '/assets/js/qeenek-map.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/character-search.js' | relative_url }}"></script>
 </html>

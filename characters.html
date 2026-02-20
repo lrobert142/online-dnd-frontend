@@ -2,153 +2,63 @@
 layout: default
 title: Characters
 ---
-<!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
+
 <div id="character-list">
+    <input id="q" type="search" placeholder="Type to search…" autocomplete="off">
     <div id="portraits-view">
-        <!-- FIXME: The duplicated sections are going to be reworked with search so just grin and bear this for now... -->
-        <h1 class="characters-section-heading collapsible-button active">Wolfhaven</h1>
-        <div class="collapsible-content active">
-            {% for npc in site.charactersWolfhaven %}
-            <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
-                <img src="{{site.baseurl}}/assets/img/npc/200x300/{{npc.image}}"
-                     alt="{{npc.name}}"
+        <template id="character-portrait-template">
+            <div class="character-portrait" onClick="">
+                <img class="portrait-image"
+                     src=""
+                     alt=""
                      width="200"
                      height="300"
                 />
-                {% if npc.isAlive == false %}
                 <img class="deceased-overlay"
                      src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
-                     alt="{{npc.name}} is deceased"
+                     alt=""
                      width="200"
                      height="300"
                 />
-                {% endif %}
-                <p class="name">{{npc.name}}</p>
+                <p class="name"></p>
             </div>
 
-            {% capture modalContent %}
-            {% include components/character-modal-content.html npc=npc %}
-            {% endcapture %}
-            {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey
-            modalContent=modalContent %}
-
-            {% endfor %}
-        </div>
-
-        <h1 class="characters-section-heading collapsible-button">Baldur's Gate</h1>
-        <div class="collapsible-content">
-            {% for npc in site.charactersBaldursGate %}
-            <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
-                <img src="{{site.baseurl}}/assets/img/npc/200x300/{{npc.image}}"
-                     alt="{{npc.name}}"
-                     width="200"
-                     height="300"
-                />
-                {% if npc.isAlive == false %}
-                <img class="deceased-overlay"
-                     src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
-                     alt="{{npc.name}} is deceased"
-                     width="200"
-                     height="300"
-                />
-                {% endif %}
-                <p class="name">{{npc.name}}</p>
+            <!-- FIXME: Because the modal itself is used in multiple locations it would be good to have this part be generic via `include` -->
+            <div id="" class="character-modal modal hide" onClick="">
+                <div class="modal-center centre" onClick="">
+                    <div class="content">
+                        <span class="close" onClick=""></span>
+                        <div class="modal-content-container">
+                            <div>
+                                <a class="portrait" href="" target="_blank" rel="noopener noreferrer">
+                                    <img class="image"
+                                         src=""
+                                         alt=""
+                                         width="200" height="300"/>
+                                    <img class="deceased-overlay"
+                                         src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
+                                         alt=""
+                                         width="200"
+                                         height="300"
+                                    />
+                                </a>
+                                <h1 class="name"></h1>
+                                <p class="gender-and-species">
+                                    <span class="gender"></span>&nbsp;<span class="species"></span>
+                                </p>
+                                <h2 class="occupation-title">Occupation</h2>
+                                <p class="occupation"></p>
+                                <h2 class="location-title">Last seen</h2>
+                                <p class="location"></p>
+                                <h2 class="description-title">About</h2>
+                                <div class="description"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            {% capture modalContent %}
-            {% include components/character-modal-content.html npc=npc %}
-            {% endcapture %}
-            {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey
-            modalContent=modalContent %}
-
-            {% endfor %}
-        </div>
-
-        <h1 class="characters-section-heading collapsible-button">Recurring Characters</h1>
-        <div class="collapsible-content">
-            {% for npc in site.charactersRecurringCharacters %}
-            <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
-                <img src="{{site.baseurl}}/assets/img/npc/200x300/{{npc.image}}"
-                     alt="{{npc.name}}"
-                     width="200"
-                     height="300"
-                />
-                {% if npc.isAlive == false %}
-                <img class="deceased-overlay"
-                     src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
-                     alt="{{npc.name}} is deceased"
-                     width="200"
-                     height="300"
-                />
-                {% endif %}
-                <p class="name">{{npc.name}}</p>
-            </div>
-
-            {% capture modalContent %}
-            {% include components/character-modal-content.html npc=npc %}
-            {% endcapture %}
-            {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey
-            modalContent=modalContent %}
-
-            {% endfor %}
-        </div>
-
-        <h1 class="characters-section-heading collapsible-button">Bastion Helpers</h1>
-        <div class="collapsible-content">
-            {% for npc in site.charactersBastionHelpers %}
-            <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
-                <img src="{{site.baseurl}}/assets/img/npc/200x300/{{npc.image}}"
-                     alt="{{npc.name}}"
-                     width="200"
-                     height="300"
-                />
-                {% if npc.isAlive == false %}
-                <img class="deceased-overlay"
-                     src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
-                     alt="{{npc.name}} is deceased"
-                     width="200"
-                     height="300"
-                />
-                {% endif %}
-                <p class="name">{{npc.name}}</p>
-            </div>
-
-            {% capture modalContent %}
-            {% include components/character-modal-content.html npc=npc %}
-            {% endcapture %}
-            {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey
-            modalContent=modalContent %}
-
-            {% endfor %}
-        </div>
-
-        <h1 class="characters-section-heading collapsible-button">Arc #1: Lost Mines of Phandelver</h1>
-        <div class="collapsible-content">
-            {% for npc in site.charactersLostMinesOfPhandelver %}
-            <div class="character-portrait" onClick='showModal("{{npc.identifier}}", "{{site.characterUrlKey}}")'>
-                <img src="{{site.baseurl}}/assets/img/npc/200x300/{{npc.image}}"
-                     alt="{{npc.name}}"
-                     width="200"
-                     height="300"
-                />
-                {% if npc.isAlive == false %}
-                <img class="deceased-overlay"
-                     src="{{site.baseurl}}/assets/img/general/200x300/skull.png"
-                     alt="{{npc.name}} is deceased"
-                     width="200"
-                     height="300"
-                />
-                {% endif %}
-                <p class="name">{{npc.name}}</p>
-            </div>
-
-            {% capture modalContent %}
-            {% include components/character-modal-content.html npc=npc %}
-            {% endcapture %}
-            {% include components/modal.html identifier=npc.identifier urlKey=site.characterUrlKey
-            modalContent=modalContent %}
-
-            {% endfor %}
-        </div>
+        </template>
+        <h1>Characters</h1>
+        <div id="results"></div>
     </div>
 </div>

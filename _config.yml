@@ -1,11 +1,6 @@
 collections_dir: collections
 collections:
-  #Characters
-  charactersLostMinesOfPhandelver:
-  charactersBastionHelpers:
-  charactersBaldursGate:
-  charactersRecurringCharacters:
-  charactersWolfhaven:
+  characters:
   # Locations
   locationsMaterialPlane:
   locationsFeywild:

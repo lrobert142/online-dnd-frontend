@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /search/characters.json
+---
+[
+{% assign characters = site.collections | where: "label", "characters" | first %}
+{% for d in characters.docs %}
+{
+"identifier": {{ d.identifier | jsonify }},
+"name": {{ d.name | jsonify }},
+"image": {{ d.image | jsonify }},
+"species": {{ d.species | jsonify }},
+"gender": {{ d.gender | jsonify }},
+"occupation": {{ d.occupation | jsonify }},
+"lastSeen": {{ d.lastSeen | jsonify }},
+"content": {{ d.content | markdownify | strip_newlines | replace: "  ", " " | jsonify }},
+"isAlive": {{ d.isAlive | jsonify }}
+}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

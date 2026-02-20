@@ -1,16 +1,9 @@
 #character-list {
   max-width: var(--page-max-width-l);
   margin: 0 auto;
-
-  .filters-and-searchbar {
-    padding: 0 var(--gap-l);
-  }
-
-  .filters-container {
-    text-align: right;
-  }
 }
 
+// Main display
 #portraits-view {
   padding: var(--gap-m);
   text-align: center;
@@ -59,6 +52,10 @@
     opacity: 0.5;
     object-fit: contain;
     object-position: center;
+
+    &.hide {
+      display: none;
+    }
   }
 
   @media (max-width: 400px) {
@@ -68,7 +65,8 @@
   }
 }
 
-#modal {
+// Modal
+.character-modal {
   .portrait {
     position: relative;
     float: left;
@@ -96,6 +94,20 @@
   .gender, .species {
     text-transform: capitalize;
     font-style: italic;
+  }
+
+  .float-left {
+    float: left;
+    margin: var(--gap-m) var(--gap-m) var(--gap-m) 0;
+  }
+
+  .float-right {
+    float: right;
+    margin: var(--gap-m) 0 var(--gap-m) var(--gap-m);
+  }
+
+  .clear {
+    clear: both;
   }
 
   @media (max-width: 600px) {
@@ -135,3 +147,4 @@
     }
   }
 }
+

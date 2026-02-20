@@ -1,17 +1,5 @@
 collections_dir: collections
 collections:
-  #Characters
-  charactersLostMinesOfPhandelver:
-  charactersBastionHelpers:
-  charactersBaldursGate:
-  charactersRecurringCharacters:
-  charactersWolfhaven:
-  # Locations
+  characters:
   locationsMaterialPlane:
   locationsFeywild:
-
-
-# Special keys used in the URL
-characterUrlKey: "character-id"
-locationUrlKey: "location-id"
-locationTabUrlKey: "location-tab"

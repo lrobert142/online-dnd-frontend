@@ -23,7 +23,7 @@ function showModal(id, urlKey) {
 }
 
 function closeModalOuterClick(e, id, urlKey) {
-    if (e && e.target && (e.target.classList.contains("modal") || e.target.classList.contains("modal-center"))) {
+    if (e && e.target && (e.target.classList.contains("modal") || e.target.classList.contains("modal-center") || e.target.classList.contains("modal-close"))) {
         closeModal(id, urlKey);
     }
 }

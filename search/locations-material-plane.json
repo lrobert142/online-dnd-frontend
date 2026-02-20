@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /search/locations-material-plane.json
+---
+[
+{% assign locations = site.collections | where: "label", "locationsMaterialPlane" | first %}
+{% for d in locations.docs %}
+{
+"identifier": {{ d.identifier | jsonify }},
+"name": {{ d.name | jsonify }},
+"pronunciation": {{ d.pronunciation | jsonify }},
+"image": {{ d.image | jsonify }},
+"snippet": {{ d.snippet | jsonify }},
+"type": {{ d.type | jsonify }},
+"content": {{ d.content | markdownify | strip_newlines | replace: "  ", " " | jsonify }}
+}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

@@ -11,7 +11,7 @@ title: Locations
         {%- endfor -%}
     </div>
 
-    <div id="plane-container-{{site.data.planes[0].identifier}}" class="plane-container">
+    <div id="plane-container-material-plane" class="plane-container">
         <div id="qeenek-container">
             <div class="zoom-container">
                 <span id="zoom-in" class="zoom-control" onclick="qeenekMap.zoomIn(0.1)">+</span>
@@ -23,11 +23,13 @@ title: Locations
             </div>
         </div>
         <p class="material-plane-map-welcome">Welcome to the world of Qeenek!</p>
-        <!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
-        <h1 class="locations-list-heading">Locations</h1>
-        {%- include components/locations-list.html locations=site.locationsMaterialPlane -%}
+
+        <input id="material-plane-searchbar" class="searchbar" type="search" placeholder="Search Material Plane Locations…"
+               autocomplete="off">
+        {%- include components/locations-list.html -%}
     </div>
-    <div id="plane-container-{{site.data.planes[1].identifier}}" class="plane-container">
+
+    <div id="plane-container-the-feywild" class="plane-container">
         <blockquote class="feywild-quote">
             "In The Feywild, the only constant is change."
             <div>- Cartographer's Guild</div>
@@ -37,8 +39,10 @@ title: Locations
             represent here. Each demi-plane, aspect, area, and more is completely at the whims of the archfey that rules
             over it. Woe be unto those who attempt to establish order from this kind of chaos.
         </p>
-        <!-- FIXME: Leave out the filters for now, I may be able to leverage Algolia to do this instead! -->
-        <h1 class="locations-list-heading">Locations</h1>
-        {%- include components/locations-list.html locations=site.locationsFeywild -%}
+        <hr class="feywild-split"/>
+
+        <input id="the-feywild-searchbar" class="searchbar" type="search" placeholder="Search Material Plane Locations…"
+               autocomplete="off">
+        {%- include components/locations-list.html -%}
     </div>
 </div>

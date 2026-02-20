@@ -15,7 +15,8 @@
   --page-max-width-l: 1200px;
   --page-max-width-m: 800px;
 
-  --border-radius-m: 5px;
+  --border-radius-s: 5px;
+  --border-radius-m: 0.5rem;
 }
 
 :root:has(.no-doc-scroll) {

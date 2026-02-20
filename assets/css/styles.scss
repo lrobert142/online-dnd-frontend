@@ -4,13 +4,11 @@
 @use "globals";
 @use "glitch-text";
 
-// Styles of components that are used across the *entire* site
+// Styles of components that are used across multiple pages
 @use "nav";
 @use "footer";
 @use "modal";
-@use "character-modal-content";
-@use "location-modal-content";
-@use "collapsible";
+@use "search";
 
 // Page specific styles
 @use "index";

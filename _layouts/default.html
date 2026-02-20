@@ -4,14 +4,19 @@
         <title>{{ page.title }}</title>
         <link rel="stylesheet" href="{{ '/assets/css/normalize.css' | relative_url }}">
         <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+        <!-- Libraries/Globals -->
+        <script src="https://unpkg.com/lunr/lunr.js"></script>
+        <script>
+            // Make baseurl-safe paths for GitHub Pages project sites
+            const baseUrl = ("{{ site.baseurl }}" || "").replace(/\/$/, "");
+            const characterUrlKey = "character-id";
+            const locationUrlKey = "location-id";
+            const locationTabUrlKey = "location-tab";
+        </script>
+        <script src="{{ '/assets/js/debounce.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
         <!-- Components -->
         <script src="{{ '/assets/js/modal.js' | relative_url }}"></script>
-        <script src="{{ '/assets/js/collapsible.js' | relative_url }}"></script>
-        <!-- Page-specific -->
-        <script src="{{ '/assets/js/characters.js' | relative_url }}"></script>
-        <script src="{{ '/assets/js/locations.js' | relative_url }}"></script>
-        <!-- Everything that needs to be loaded on window load completion -->
-        <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     </head>
     <body>
         {% include nav.html %}
@@ -20,4 +25,7 @@
     </body>
     <!-- These items affect things in the DOM and must be loaded after those are loaded -->
     <script src="{{ '/assets/js/qeenek-map.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/characters.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/locations.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/lore.js' | relative_url }}"></script>
 </html>

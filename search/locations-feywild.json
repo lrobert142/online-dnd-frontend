@@ -3,8 +3,8 @@ layout: null
 permalink: /search/locations-feywild.json
 ---
 [
-{% assign characters = site.collections | where: "label", "locationsFeywild" | first %}
-{% for d in characters.docs %}
+{% assign locations = site.collections | where: "label", "locationsFeywild" | first %}
+{% for d in locations.docs %}
 {
 "identifier": {{ d.identifier | jsonify }},
 "name": {{ d.name | jsonify }},

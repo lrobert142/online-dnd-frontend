@@ -1,0 +1,16 @@
+---
+layout: null
+permalink: /search/lore.json
+---
+[
+{% assign posts = site.collections | where: "label", "posts" | first %}
+{% for d in posts.docs %}
+{
+"url": {{d.url | relative_url | jsonify}},
+"banner": {{ d.banner | relative_url | jsonify }},
+"title": {{ d.title | jsonify }},
+"excerpt": {{ d.excerpt | markdownify | strip_newlines | replace: "  ", " " | jsonify }},
+"content": {{ d.content | markdownify | strip_newlines | replace: "  ", " " | jsonify }}
+}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

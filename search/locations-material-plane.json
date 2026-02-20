@@ -3,8 +3,8 @@ layout: null
 permalink: /search/locations-material-plane.json
 ---
 [
-{% assign characters = site.collections | where: "label", "locationsMaterialPlane" | first %}
-{% for d in characters.docs %}
+{% assign locations = site.collections | where: "label", "locationsMaterialPlane" | first %}
+{% for d in locations.docs %}
 {
 "identifier": {{ d.identifier | jsonify }},
 "name": {{ d.name | jsonify }},

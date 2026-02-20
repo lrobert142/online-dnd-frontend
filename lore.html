@@ -3,19 +3,18 @@ layout: default
 title: Lore
 ---
 <div id="lore">
-    <h1 class="lore-page-title">Latest Lore Articles</h1>
-
-    <ul class="lore-article-cards-container">
-        {% for post in site.posts %}
+    <input id="lore-searchbar" class="searchbar" type="search" placeholder="Search lore articles…" autocomplete="off">
+    <template id="lore-template">
         <li class="lore-article-card">
-            <a class="card-link" href="{{ post.url | relative_url }}">
-                <img class="card-banner-image" src="{{ post.banner | relative_url }}" alt="{{ post.title }}">
-                <h2 class="card-title">{{ post.title }}</h2>
+            <a class="card-link">
+                <img class="card-banner-image">
+                <h2 class="card-title"></h2>
                 <div class="card-excerpt">
                     {{ post.excerpt }}
                 </div>
             </a>
         </li>
-        {% endfor %}
-    </ul>
+    </template>
+
+    <ul class="lore-article-cards-container"></ul>
 </div>

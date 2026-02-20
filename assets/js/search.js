@@ -68,8 +68,11 @@
             const query = inputEl.value.trim();
             const {idx, docsById} = await loadCollection(collectionKey);
 
-            // Will default to showing everything when there is no query
-            const hits = idx.search(query);
+            let hits = idx.search(query);
+            // In case we find nothing, change to a fuzzy search
+            if (hits.length === 0) {
+                hits = idx.search("*" + query + "*");
+            }
             const docs = hits.map(h => docsById.get(String(h.ref)));
 
             render({resultsEl, docs, hits, docsById, query});

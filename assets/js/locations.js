@@ -45,7 +45,7 @@
             const modalTypeEl = modalEl.querySelector(".type");
             const modalDescriptionEl = modalEl.querySelector(".description");
 
-            const close = (event) => closeModalOuterClick(event, doc.identifier, characterUrlKey);
+            const close = (event) => closeModalOuterClick(event, doc.identifier, locationUrlKey);
 
             modalEl.id = `modal-${doc.identifier}`;
             modalEl.onclick = close;

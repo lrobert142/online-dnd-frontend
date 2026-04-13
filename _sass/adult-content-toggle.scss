@@ -1,0 +1,27 @@
+#adult-content-toggle {
+  position: absolute;
+  top: var(--gap-m);
+  right: var(--gap-m);
+  background: none;
+  border: 1px solid var(--foreground-darker);
+  border-radius: var(--border-radius-s);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: var(--gap-xs) var(--gap-s);
+  vertical-align: middle;
+
+  &:hover {
+    background: var(--foreground-darker);
+    color: var(--background);
+  }
+
+  &[aria-pressed="true"] {
+    background: var(--foreground);
+    color: var(--background);
+
+    &:hover {
+      background: var(--foreground-darker);
+    }
+  }
+}

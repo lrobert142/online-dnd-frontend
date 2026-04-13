@@ -71,7 +71,7 @@ function initQeenekMap() {
     for (const [element, id] of labels) {
         element.style.cursor = "pointer";
         element.addEventListener("click", function () {
-            showModal(id, "{{site.locationUrlKey}}")
+            showModal(id, locationUrlKey)
         })
     }
 

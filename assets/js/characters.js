@@ -25,7 +25,18 @@
             const deceasedOverlayEl = portraitDivEl.querySelector(".deceased-overlay");
 
             portraitDivEl.onclick = () => showModal(doc.identifier, characterUrlKey);
-            imageEl.src = `${baseUrl}/assets/img/npc/200x300/${doc.image}`;
+
+            const thumbSrc = `${baseUrl}/assets/img/npc/200x300/${doc.image}`;
+            const fullSrc = `${baseUrl}/assets/img/npc/${doc.image}`;
+            const safeSrc = `${baseUrl}/assets/img/general/200x300/nsfw-placeholder.png`;
+
+            if (doc.imageIsAdult) {
+                imageEl.dataset.safeSrc = safeSrc;
+                imageEl.dataset.adultSrc = thumbSrc;
+                imageEl.src = safeSrc;
+            } else {
+                imageEl.src = thumbSrc;
+            }
             imageEl.alt = doc.name;
             nameEl.textContent = doc.name;
 
@@ -50,8 +61,17 @@
             modalCenterEl.onclick = close;
             modalCloseEl.onclick = close;
 
-            modalPortraitLinkEl.href = `${baseUrl}/assets/img/npc/${doc.image}`;
-            modalPortraitImageEl.src = `${baseUrl}/assets/img/npc/200x300/${doc.image}`;
+            if (doc.imageIsAdult) {
+                modalPortraitLinkEl.dataset.safeHref = safeSrc;
+                modalPortraitLinkEl.dataset.adultHref = fullSrc;
+                modalPortraitLinkEl.href = safeSrc;
+                modalPortraitImageEl.dataset.safeSrc = safeSrc;
+                modalPortraitImageEl.dataset.adultSrc = thumbSrc;
+                modalPortraitImageEl.src = safeSrc;
+            } else {
+                modalPortraitLinkEl.href = fullSrc;
+                modalPortraitImageEl.src = thumbSrc;
+            }
             modalNameEl.textContent = doc.name;
             modalGenderEl.textContent = doc.gender;
             modalSpeciesEl.textContent = doc.species;
@@ -72,6 +92,11 @@
         }
 
         resultsEl.appendChild(fragment);
+
+        // Re-apply adult content filter to dynamically rendered images
+        if (typeof window.applyAdultContentFilter === "function") {
+            window.applyAdultContentFilter();
+        }
     }
 
     const controller = createLunrSearch({

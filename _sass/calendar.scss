@@ -5,7 +5,7 @@ $calendar-event-height: 22px;
 
 .calendar-container {
   max-width: var(--page-max-width-l);
-  margin: var(--gap-l) auto 0;
+  margin: 0 auto 0;
   text-align: left;
 
   .calendar-header {
@@ -85,7 +85,7 @@ $calendar-event-height: 22px;
   }
 
   .calendar-day {
-    min-height: 90px;
+    min-height: 10rem;
     border: 1px solid var(--background-darker);
     padding: var(--gap-xxs) var(--gap-xs);
     position: relative;
@@ -171,7 +171,6 @@ $calendar-event-height: 22px;
 }
   
   // Event detail modal
-  // TODO: Do we need to have special styles for this? Could we leverage the existing modal styles?
 .calendar-event-modal {
     .event-date {
       color: var(--foreground-darker);
@@ -193,7 +192,6 @@ $calendar-event-height: 22px;
       color: #fff;
       margin-bottom: var(--gap-m);
 
-      //FIXME: Duplicated above colours, move this to a single var (in globals) per character
         &[data-player="Gaelin"] {
             color: var(--black);
             background-color: var(--gaelin-colour);

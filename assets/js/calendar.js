@@ -2,6 +2,12 @@
   const calendarContainer = document.querySelector(".calendar-container");
   if (!calendarContainer) return;
 
+  const layoutTemplate = document.getElementById("calendar-layout-template");
+  const dayHeaderTemplate = document.getElementById("calendar-day-header-template");
+  const dayTemplate = document.getElementById("calendar-day-template");
+  const eventTemplate = document.getElementById("calendar-event-template");
+  const modalTemplate = document.getElementById("calendar-modal-template");
+
   const eventUrlKey = "event-id";
 
   const MONTHS = [
@@ -42,84 +48,70 @@
   }
 
   function renderCalendar() {
-    //TODO: Is there a nicer way to doing this? Probably via appendElement calls instead of raw HTMl strings...
-    calendarContainer.innerHTML = `
-      <div class="calendar-header">
-        <div class="calendar-nav">
-          <button class="calendar-prev-btn" aria-label="Previous month">&larr; Prev</button>
-          <button class="calendar-today-btn">Today</button>
-          <button class="calendar-next-btn" aria-label="Next month">Next &rarr;</button>
-        </div>
-        <div class="calendar-title">${MONTHS[currentMonth - 1]} &mdash; Year ${currentYear.toLocaleString()}</div>
-        <div class="calendar-nav">
-          <button class="calendar-prev-year-btn" aria-label="Previous year">&larr; Year</button>
-          <button class="calendar-next-year-btn" aria-label="Next year">Year &rarr;</button>
-        </div>
-      </div>
-      <div class="calendar-grid">
-        ${DAY_NAMES.map((d, i) => `<div class="calendar-day-header" title="${DAY_FULL_NAMES[i]}">${d}</div>`).join("")}
-        ${buildDayCells()}
-      </div>
-    `;
+    const node = layoutTemplate.content.cloneNode(true);
+
+    // Title
+    node.querySelector(".calendar-title").textContent =
+      `${MONTHS[currentMonth - 1]} \u2014 Year ${currentYear.toLocaleString()}`;
 
     // Navigation
-    calendarContainer
-      .querySelector(".calendar-prev-btn")
-      .addEventListener("click", () => navigate(-1));
-    calendarContainer
-      .querySelector(".calendar-next-btn")
-      .addEventListener("click", () => navigate(1));
-    calendarContainer
-      .querySelector(".calendar-today-btn")
-      .addEventListener("click", goToToday);
-    calendarContainer
-      .querySelector(".calendar-prev-year-btn")
-      .addEventListener("click", () => navigateYear(-1));
-    calendarContainer
-      .querySelector(".calendar-next-year-btn")
-      .addEventListener("click", () => navigateYear(1));
+    node.querySelector(".calendar-prev-btn").addEventListener("click", () => navigateMonth(-1));
+    node.querySelector(".calendar-next-btn").addEventListener("click", () => navigateMonth(1));
+    node.querySelector(".calendar-today-btn").addEventListener("click", goToToday);
+    node.querySelector(".calendar-prev-year-btn").addEventListener("click", () => navigateYear(-1));
+    node.querySelector(".calendar-next-year-btn").addEventListener("click", () => navigateYear(1));
 
-    // Event banner clicks
-    calendarContainer.querySelectorAll(".calendar-event").forEach((el) => {
-      el.addEventListener("click", (e) => {
-        e.preventDefault();
-        const id = el.getAttribute("data-event-id");
-        showEventModal(id);
-      });
+    // Grid
+    const grid = node.querySelector(".calendar-grid");
+
+    // Day-of-week headers
+    DAY_NAMES.forEach((name, i) => {
+      const header = dayHeaderTemplate.content.cloneNode(true);
+      const headerEl = header.querySelector(".calendar-day-header");
+      headerEl.textContent = name;
+      headerEl.title = DAY_FULL_NAMES[i];
+      grid.appendChild(header);
     });
-  }
 
-  //TODO: Is there a nicer way to doing this? Probably via appendElement calls instead of raw HTMl strings...
-  function buildDayCells() {
-    let cells = "";
-
-    // 30 days / 6 days per week = exactly 5 rows, no offset needed
+    // Day cells — 30 days / 6 per week = exactly 5 rows
     for (let day = 1; day <= DAYS_PER_MONTH; day++) {
-      const isToday =
-        day === TODAY.day &&
-        currentMonth === TODAY.month &&
-        currentYear === TODAY.year;
-      const dayEvents = getEventsForDay(day, currentMonth, currentYear);
-
-      let eventsHtml = "";
-      dayEvents.forEach((evt) => {
-        const playerAttr = evt.player
-          ? ` data-player="${evt.player}"`
-          : "";
-        eventsHtml += `<a class="calendar-event" data-event-id="${evt.identifier}"${playerAttr} title="${evt.title}">${evt.title}</a>`;
-      });
-
-      cells += `
-        <div class="calendar-day${isToday ? " today" : ""}">
-          <span class="day-number">${day}</span>
-          <div class="day-events">${eventsHtml}</div>
-        </div>`;
+      grid.appendChild(buildDayCell(day));
     }
 
-    return cells;
+    calendarContainer.replaceChildren(node);
   }
 
-  function navigate(direction) {
+  function buildDayCell(day) {
+    const isToday =
+      day === TODAY.day &&
+      currentMonth === TODAY.month &&
+      currentYear === TODAY.year;
+
+    const node = dayTemplate.content.cloneNode(true);
+    const dayEl = node.querySelector(".calendar-day");
+    if (isToday) dayEl.classList.add("today");
+
+    dayEl.querySelector(".day-number").textContent = day;
+
+    const eventsContainer = dayEl.querySelector(".day-events");
+    getEventsForDay(day, currentMonth, currentYear).forEach((evt) => {
+      const eventNode = eventTemplate.content.cloneNode(true);
+      const eventEl = eventNode.querySelector(".calendar-event");
+      eventEl.textContent = evt.title;
+      eventEl.title = evt.title;
+      eventEl.dataset.eventId = evt.identifier;
+      if (evt.player) eventEl.dataset.player = evt.player;
+      eventEl.addEventListener("click", (e) => {
+        e.preventDefault();
+        showEventModal(evt.identifier);
+      });
+      eventsContainer.appendChild(eventNode);
+    });
+
+    return node;
+  }
+
+  function navigateMonth(direction) {
     currentMonth += direction;
     if (currentMonth > MONTHS_PER_YEAR) {
       currentMonth = 1;
@@ -157,30 +149,26 @@
   }
 
   function createEventModal(evt) {
-    const playerBadge = evt.player
-      ? `<span class="event-player" data-player="${evt.player}">${evt.player}</span>`
-      : "";
+    const node = modalTemplate.content.cloneNode(true);
 
-    const wrapper = document.createElement("div");
+    const wrapper = node.querySelector(".modal");
     wrapper.id = "modal-" + evt.identifier;
-    wrapper.className = "modal hide";
-    wrapper.setAttribute(
-      "onclick",
-      `closeModalOuterClick(event, '${evt.identifier}', '${eventUrlKey}')`
-    );
-    wrapper.innerHTML = `
-      <div class="modal-center centre">
-        <div class="content">
-          <span class="close modal-close" onclick="closeModal('${evt.identifier}', '${eventUrlKey}')"></span>
-          <div class="modal-content-container calendar-event-modal">
-            <div class="event-title">${evt.title}</div>
-            <div class="event-date">${formatDate(evt.day, evt.month, evt.year)}</div>
-            ${playerBadge}
-            <div class="event-description">${evt.description}</div>
-          </div>
-        </div>
-      </div>
-    `;
+    wrapper.addEventListener("click", (e) => closeModalOuterClick(e, evt.identifier, eventUrlKey));
+
+    node.querySelector(".modal-close").addEventListener("click", () => closeModal(evt.identifier, eventUrlKey));
+    node.querySelector(".event-title").textContent = evt.title;
+    node.querySelector(".event-date").textContent = formatDate(evt.day, evt.month, evt.year);
+
+    const playerEl = node.querySelector(".event-player");
+    if (evt.player) {
+      playerEl.textContent = evt.player;
+      playerEl.dataset.player = evt.player;
+    } else {
+      playerEl.remove();
+    }
+
+    node.querySelector(".event-description").textContent = evt.description;
+
     return wrapper;
   }
 

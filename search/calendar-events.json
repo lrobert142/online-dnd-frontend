@@ -1,0 +1,16 @@
+---
+layout: null
+---
+[
+  {% for event in site.events %}
+  {
+    "identifier": {{ event.identifier | jsonify }},
+    "title": {{ event.title | jsonify }},
+    "day": {{ event.day }},
+    "month": {{ event.month }},
+    "year": {{ event.year }},
+    "description": {{ event.description | jsonify }},
+    "player": {{ event.player | default: "" | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

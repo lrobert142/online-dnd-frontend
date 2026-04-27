@@ -1,0 +1,256 @@
+// TODO: Any colors and such that we use should be in globals or we use the existing globals colors.
+// This will do for now though
+$calendar-accent: #5b8dd9;
+$calendar-accent-dark: #4a7bc8;
+$calendar-today-bg: rgba(91, 141, 217, 0.15);
+$calendar-today-border: $calendar-accent;
+$calendar-event-height: 22px;
+
+.calendar-container {
+  max-width: var(--page-max-width-l);
+  margin: var(--gap-l) auto 0;
+  text-align: left;
+
+  .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--gap-m);
+    flex-wrap: wrap;
+    gap: var(--gap-s);
+
+    .calendar-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .calendar-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-s);
+
+      button {
+        background: none;
+        border: 1px solid var(--foreground-darker);
+        color: var(--foreground);
+        padding: 0.4rem 0.8rem;
+        border-radius: var(--border-radius-s);
+        cursor: pointer;
+        font-size: 0.9rem;
+
+        &:hover {
+          background-color: var(--background-darker);
+        }
+      }
+
+      .calendar-today-btn {
+        border-color: $calendar-accent;
+        color: $calendar-accent;
+        font-weight: bold;
+
+        &:hover {
+          background-color: $calendar-today-bg;
+        }
+      }
+    }
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border: 1px solid var(--background-darker);
+    border-radius: var(--border-radius-m);
+    overflow: hidden;
+  }
+
+  .calendar-day-header {
+    background-color: var(--background-darker);
+    padding: var(--gap-s);
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .calendar-day {
+    min-height: 90px;
+    border: 1px solid var(--background-darker);
+    padding: var(--gap-xxs) var(--gap-xs);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &.empty {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    &.today {
+      background-color: $calendar-today-bg;
+
+      .day-number {
+        background-color: $calendar-accent;
+        color: #fff;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+    }
+
+    .day-number {
+      font-size: 0.85rem;
+      margin-bottom: var(--gap-xxs);
+      display: inline-block;
+    }
+
+    .day-events {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1;
+      overflow: hidden;
+    }
+  }
+
+  .calendar-event {
+    display: block;
+    height: $calendar-event-height;
+    line-height: $calendar-event-height;
+    padding: 0 var(--gap-xs);
+    border-radius: 3px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    background-color: $calendar-accent;
+    color: #fff;
+    text-decoration: none;
+    transition: filter 0.15s;
+
+    &:hover {
+      filter: brightness(1.15);
+      color: #fff;
+    }
+
+    // Player-specific colours
+    // TODO: DEFINITELY move things like this to globals because I could see myself using this again.
+    // Hmm, might even be worth changing the names on the index page maybe? Worth a shot...
+    &[data-player="Gaelin"] {
+      background-color: #5b8dd9;
+    }
+
+    &[data-player="Kaldoris"] {
+      background-color: #7b5ea7;
+    }
+
+    &[data-player="Petee"] {
+      background-color: #d9835b;
+    }
+
+    &[data-player="Sýnchysi"] {
+      background-color: #5baa5b;
+    }
+  }
+
+  // Event detail modal
+  // TODO: Do we need to have special styles for this? Could we leverage the existing modal styles?
+  .calendar-event-modal {
+    .event-date {
+      color: var(--foreground-darker);
+      font-size: 0.9rem;
+      margin-bottom: var(--gap-s);
+    }
+
+    .event-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: var(--gap-s);
+    }
+
+    .event-player {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      color: #fff;
+      margin-bottom: var(--gap-m);
+
+      //FIXME: Duplicated above colours, move this to a single var (in globals) per character
+      &[data-player="Gaelin"] { background-color: #5b8dd9; }
+      &[data-player="Kaldoris"] { background-color: #7b5ea7; }
+      &[data-player="Petee"] { background-color: #d9835b; }
+      &[data-player="Sýnchysi"] { background-color: #5baa5b; }
+    }
+
+    .event-description {
+      line-height: 1.6;
+    }
+  }
+}
+
+// TODO: Manually review these to see if they work well. I'm especially curious about mobile styles.
+//  Might need to see how Google Calendar does it. Hmm...
+@media (max-width: 768px) {
+  .calendar-container {
+    .calendar-header {
+      justify-content: center;
+
+      .calendar-title {
+        width: 100%;
+        text-align: center;
+      }
+
+      .calendar-nav {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .calendar-day {
+      min-height: 60px;
+
+      .day-number {
+        font-size: 0.75rem;
+      }
+    }
+
+    .calendar-event {
+      font-size: 0.6rem;
+      height: 18px;
+      line-height: 18px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-container {
+    .calendar-day-header {
+      font-size: 0.6rem;
+      padding: var(--gap-xxs);
+    }
+
+    .calendar-day {
+      min-height: 45px;
+      padding: 2px;
+
+      .day-number {
+        font-size: 0.65rem;
+      }
+    }
+
+    .calendar-event {
+      font-size: 0.55rem;
+      height: 16px;
+      line-height: 16px;
+      padding: 0 2px;
+    }
+  }
+}

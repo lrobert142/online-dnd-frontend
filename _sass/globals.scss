@@ -1,9 +1,17 @@
 :root {
-  --background: #ffffff;
-  --background-darker: #cacaca;
-  --foreground: #171717;
-  --foreground-darker: #272727;
+  --black: #0a0a0a;
+  --grey: #cacaca;
 
+  --background: #ffffff;
+  --background-darker: var(--grey);
+  --foreground: var(--black);
+  --foreground-darker: #272727;
+  
+  --synchysi-colour: rgba(233, 155, 182);
+  --gaelin-colour: rgba(239,191,4);
+  --petee-colour: rgba(41, 42, 49);
+  --kaldoris-colour: rgba(71, 64, 122);
+  
   --gap-xxs: 0.15rem;
   --gap-xs: 0.25rem;
   --gap-s: 0.5rem;
@@ -25,10 +33,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: var(--black);
     --background-darker: #000000;
     --foreground: #ededed;
-    --foreground-darker: #cacaca;
+    --foreground-darker: var(--grey);
   }
 }
 

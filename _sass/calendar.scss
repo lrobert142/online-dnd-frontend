@@ -1,9 +1,6 @@
-// TODO: Any colors and such that we use should be in globals or we use the existing globals colors.
-// This will do for now though
+// Because these colours are specific to this module, we don't need them in globals.scss
 $calendar-accent: #5b8dd9;
-$calendar-accent-dark: #4a7bc8;
 $calendar-today-bg: rgba(91, 141, 217, 0.15);
-$calendar-today-border: $calendar-accent;
 $calendar-event-height: 22px;
 
 .calendar-container {
@@ -141,28 +138,29 @@ $calendar-event-height: 22px;
     }
 
     // Player-specific colours
-    // TODO: DEFINITELY move things like this to globals because I could see myself using this again.
-    // Hmm, might even be worth changing the names on the index page maybe? Worth a shot...
     &[data-player="Gaelin"] {
-      background-color: #5b8dd9;
+      color: var(--black);
+      background-color: var(--gaelin-colour);
     }
 
     &[data-player="Kaldoris"] {
-      background-color: #7b5ea7;
+      background-color: var(--kaldoris-colour);
     }
 
     &[data-player="Petee"] {
-      background-color: #d9835b;
+      background-color: var(--petee-colour);
     }
 
     &[data-player="Sýnchysi"] {
-      background-color: #5baa5b;
+      color: var(--black);
+      background-color: var(--synchysi-colour);
     }
   }
-
+}
+  
   // Event detail modal
   // TODO: Do we need to have special styles for this? Could we leverage the existing modal styles?
-  .calendar-event-modal {
+.calendar-event-modal {
     .event-date {
       color: var(--foreground-darker);
       font-size: 0.9rem;
@@ -184,20 +182,27 @@ $calendar-event-height: 22px;
       margin-bottom: var(--gap-m);
 
       //FIXME: Duplicated above colours, move this to a single var (in globals) per character
-      &[data-player="Gaelin"] { background-color: #5b8dd9; }
-      &[data-player="Kaldoris"] { background-color: #7b5ea7; }
-      &[data-player="Petee"] { background-color: #d9835b; }
-      &[data-player="Sýnchysi"] { background-color: #5baa5b; }
+        &[data-player="Gaelin"] {
+            color: var(--black);
+            background-color: var(--gaelin-colour);
+        }
+        &[data-player="Kaldoris"] {
+            background-color: var(--kaldoris-colour);
+        }
+        &[data-player="Petee"] {
+            background-color: var(--petee-colour);
+        }
+        &[data-player="Sýnchysi"] {
+            color: var(--black);
+            background-color: var(--synchysi-colour);
+        }
     }
 
     .event-description {
       line-height: 1.6;
     }
-  }
 }
 
-// TODO: Manually review these to see if they work well. I'm especially curious about mobile styles.
-//  Might need to see how Google Calendar does it. Hmm...
 @media (max-width: 768px) {
   .calendar-container {
     .calendar-header {

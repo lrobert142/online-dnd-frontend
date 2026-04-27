@@ -47,7 +47,8 @@
     return `Day ${day} of ${MONTHS[month - 1]}, Year ${year.toLocaleString()}`;
   }
 
-  function renderCalendar() {
+  // direction: -1 = slide right (going back), 1 = slide left (going forward), 0 = no animation
+  function renderCalendar(direction = 0) {
     const node = layoutTemplate.content.cloneNode(true);
 
     // Title
@@ -63,6 +64,8 @@
 
     // Grid
     const grid = node.querySelector(".calendar-grid");
+    if (direction > 0) grid.classList.add("slide-left");
+    else if (direction < 0) grid.classList.add("slide-right");
 
     // Day-of-week headers
     DAY_NAMES.forEach((name, i) => {
@@ -120,18 +123,19 @@
       currentMonth = MONTHS_PER_YEAR;
       currentYear--;
     }
-    renderCalendar();
+    renderCalendar(direction);
   }
 
   function navigateYear(direction) {
     currentYear += direction;
-    renderCalendar();
+    renderCalendar(direction);
   }
 
   function goToToday() {
+    const monthDiff = (TODAY.year - currentYear) * MONTHS_PER_YEAR + (TODAY.month - currentMonth);
     currentMonth = TODAY.month;
     currentYear = TODAY.year;
-    renderCalendar();
+    renderCalendar(monthDiff === 0 ? 0 : monthDiff > 0 ? 1 : -1);
   }
 
   // Modal

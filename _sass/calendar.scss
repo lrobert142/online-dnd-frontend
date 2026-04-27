@@ -54,12 +54,24 @@ $calendar-event-height: 22px;
     }
   }
 
+  .calendar-grid-wrapper {
+    overflow: hidden;
+  }
+
   .calendar-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     border: 1px solid var(--background-darker);
     border-radius: var(--border-radius-m);
     overflow: hidden;
+
+    &.slide-left {
+      animation: slide-in-left 0.25s ease-out;
+    }
+
+    &.slide-right {
+      animation: slide-in-right 0.25s ease-out;
+    }
   }
 
   .calendar-day-header {
@@ -201,6 +213,16 @@ $calendar-event-height: 22px;
     .event-description {
       line-height: 1.6;
     }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(60px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(-60px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
 }
 
 @media (max-width: 768px) {

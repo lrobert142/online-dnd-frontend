@@ -32,6 +32,10 @@
     }
   }
 
+  .section-split {
+    margin: var(--gap-l) 0;
+  }
+
   @media (max-width: 1000px) {
     .hero-image-container {
       grid-template-columns: repeat(2, 1fr);

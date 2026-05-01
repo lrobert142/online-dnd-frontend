@@ -19,4 +19,56 @@ layout: default
             {% include components/annotated-image.html class="hero-image" src=image_src alt=alt_text width="400" height="600" annotation=annotation_text %}
         {% endfor %}
     </main>
+    <hr class="section-split"/>
+    <div class="calendar-container">
+        <template id="calendar-layout-template">
+            <div class="calendar-header">
+                <div class="calendar-nav">
+                    <button class="calendar-prev-btn" aria-label="Previous month">&larr; Month</button>
+                    <button class="calendar-today-btn">Today</button>
+                    <button class="calendar-next-btn" aria-label="Next month">Month &rarr;</button>
+                </div>
+                <div class="calendar-title"></div>
+                <div class="calendar-nav">
+                    <button class="calendar-prev-year-btn" aria-label="Previous year">&larr; Year</button>
+                    <button class="calendar-next-year-btn" aria-label="Next year">Year &rarr;</button>
+                </div>
+            </div>
+            <div class="calendar-grid"></div>
+        </template>
+
+        <template id="calendar-day-header-template">
+            <div class="calendar-day-header"></div>
+        </template>
+
+        <template id="calendar-day-template">
+            <div class="calendar-day">
+                <span class="day-number"></span>
+                <div class="day-events"></div>
+            </div>
+        </template>
+
+        <template id="calendar-event-template">
+            <a class="calendar-event" href="#"></a>
+        </template>
+
+        <template id="calendar-modal-template">
+            <div class="modal hide">
+                <div class="modal-center centre">
+                    <div class="content">
+                        <span class="close modal-close"></span>
+                        <div class="modal-content-container calendar-event-modal">
+                            <div class="event-title"></div>
+                            <div class="event-date"></div>
+                            <span class="event-player"></span>
+                            <div class="event-description"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Rendered by calendar.js -->
+    </div>
+
 </div>

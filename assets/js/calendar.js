@@ -171,7 +171,7 @@
       playerEl.remove();
     }
 
-    node.querySelector(".event-description").textContent = evt.description;
+    node.querySelector(".event-description").innerHTML = evt.content;
 
     return wrapper;
   }

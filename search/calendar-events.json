@@ -9,7 +9,7 @@ layout: null
     "day": {{ event.day }},
     "month": {{ event.month }},
     "year": {{ event.year }},
-    "description": {{ event.description | jsonify }},
+    "content": {{ event.content | strip_newlines | replace: "  ", " " | jsonify }},
     "player": {{ event.player | default: "" | jsonify }}
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}

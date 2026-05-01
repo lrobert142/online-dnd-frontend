@@ -153,19 +153,44 @@ $calendar-event-height: 22px;
     &[data-player="Gaelin"] {
       color: var(--black);
       background-color: var(--gaelin-colour);
+
+      &::before {
+        content: "🧍 "
+      }
     }
 
     &[data-player="Kaldoris"] {
       background-color: var(--kaldoris-colour);
+
+      &::before {
+        content: "🐇 "
+      }
     }
 
     &[data-player="Petee"] {
       background-color: var(--petee-colour);
+
+      &::before {
+        content: "🦅 "
+      }
     }
 
     &[data-player="Sýnchysi"] {
       color: var(--black);
       background-color: var(--synchysi-colour);
+
+      &::before {
+        content: "🐺 "
+      }
+    }
+
+    &[data-player="Special"] {
+      color: var(--black);
+      background-color: var(--special-colour);
+
+      &::before {
+        content: "⭐ "
+      }
     }
   }
 }

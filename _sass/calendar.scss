@@ -72,6 +72,38 @@ $calendar-event-height: 22px;
     &.slide-right {
       animation: slide-in-right 0.25s ease-out;
     }
+
+    :nth-child(1 of .calendar-day)::before,
+    :nth-child(8 of .calendar-day)::before,
+    :nth-child(16 of .calendar-day)::before,
+    :nth-child(24 of .calendar-day)::before {
+      position: absolute;
+      left: 50%;
+      top: 0;
+    }
+
+    :nth-child(1 of .calendar-day).today::before,
+    :nth-child(8 of .calendar-day).today::before,
+    :nth-child(16 of .calendar-day).today::before,
+    :nth-child(24 of .calendar-day).today::before {
+      top: var(--gap-xs);
+    }
+    
+    :nth-child(1 of .calendar-day)::before {
+      content: "🌕";
+    }
+    
+    :nth-child(8 of .calendar-day)::before {
+      content: "🌓";
+    }
+    
+    :nth-child(16 of .calendar-day)::before {
+      content: "🌑";
+    }
+    
+    :nth-child(24 of .calendar-day)::before {
+      content: "🌗";
+    }
   }
 
   .calendar-day-header {

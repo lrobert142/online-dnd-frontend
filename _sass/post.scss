@@ -21,4 +21,8 @@
     float: right;
     margin: var(--gap-m) 0 var(--gap-m) var(--gap-m);
   }
+  
+  @media (max-width: 830px) {
+    margin: 0 var(--gap-l);
+  }
 }

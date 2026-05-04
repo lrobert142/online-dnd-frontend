@@ -11,6 +11,8 @@
 
 .lore-article-cards-container {
   list-style: none;
+  padding: 0;
+  text-align: center;
 
   .lore-article-card {
     display: inline-block;
@@ -21,6 +23,14 @@
 
     &:hover {
       opacity: 0.8;
+    }
+  
+    @media (max-width: 1250px) {
+      width: calc(100% / 2 - (var(--gap-m) * 3));
+    }
+
+    @media (max-width: 800px) {
+      width: calc(100% - (var(--gap-m) * 3));
     }
   }
 

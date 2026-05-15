@@ -104,6 +104,11 @@ $calendar-event-height: 22px;
     :nth-child(24 of .calendar-day)::before {
       content: "🌗";
     }
+
+    :nth-child(6n of .calendar-day)::after {
+      content: "💰";
+      text-align: right;
+    }
   }
 
   .calendar-day-header {

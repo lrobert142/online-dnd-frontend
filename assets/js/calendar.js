@@ -31,7 +31,7 @@
   const DAY_FULL_NAMES = ["Luxday", "Arday", "Ornday", "Tyrday", "Velday", "Nyxday"];
 
   // "Today" — change this single line to update the current date
-  const TODAY = { day: 16, month: 5, year: 7692 };
+  const TODAY = { day: 20, month: 5, year: 7692 };
 
   let currentMonth = TODAY.month;
   let currentYear = TODAY.year;

@@ -73,39 +73,39 @@ $calendar-event-height: 22px;
       animation: slide-in-right 0.25s ease-out;
     }
 
-    :nth-child(1 of .calendar-day)::before,
-    :nth-child(8 of .calendar-day)::before,
-    :nth-child(16 of .calendar-day)::before,
-    :nth-child(24 of .calendar-day)::before {
+    > .calendar-day:nth-child(7)::before,
+    > .calendar-day:nth-child(14)::before,
+    > .calendar-day:nth-child(22)::before,
+    > .calendar-day:nth-child(30)::before {
       position: absolute;
       left: 50%;
       top: 0;
     }
 
-    :nth-child(1 of .calendar-day).today::before,
-    :nth-child(8 of .calendar-day).today::before,
-    :nth-child(16 of .calendar-day).today::before,
-    :nth-child(24 of .calendar-day).today::before {
+    > .calendar-day:nth-child(7).today::before,
+    > .calendar-day:nth-child(14).today::before,
+    > .calendar-day:nth-child(22).today::before,
+    > .calendar-day:nth-child(30).today::before {
       top: var(--gap-xs);
     }
     
-    :nth-child(1 of .calendar-day)::before {
+    > .calendar-day:nth-child(7)::before {
       content: "🌕";
     }
     
-    :nth-child(8 of .calendar-day)::before {
+    > .calendar-day:nth-child(14)::before {
       content: "🌓";
     }
     
-    :nth-child(16 of .calendar-day)::before {
+    > .calendar-day:nth-child(22)::before {
       content: "🌑";
     }
     
-    :nth-child(24 of .calendar-day)::before {
+    > .calendar-day:nth-child(30)::before {
       content: "🌗";
     }
 
-    :nth-child(6n of .calendar-day)::after {
+    > .calendar-day:nth-child(6n)::after {
       content: "💰";
       text-align: right;
     }

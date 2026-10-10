@@ -25,7 +25,7 @@
             const excerptEl = cardEl.querySelector(".card-excerpt");
 
             cardLinkEl.href = doc.url;
-            bannerImageEl.src = doc.banner;
+            bannerImageEl.src = "assets/img/lore/421x270/" + doc.banner;
             bannerImageEl.alt = doc.title;
             titleEl.textContent = doc.title;
             excerptEl.innerHTML = doc.excerpt;
